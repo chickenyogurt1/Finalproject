@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbmt0u7drjtdl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u58je"]
+
+[node name="GameWorld" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_u58je")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 263.0
+offset_top = 153.0
+offset_right = 303.0
+offset_bottom = 176.0
+text = "oogly boogly"
