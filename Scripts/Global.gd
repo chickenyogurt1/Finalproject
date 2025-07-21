@@ -1,6 +1,5 @@
 # Global.gd
 extends Node
-
 var goods = {
 	"medicine": {"weight": 2, "value": 150, "risk": 0.9},
 	"food": {"weight": 1, "value": 50, "risk": 0.3},
@@ -12,6 +11,6 @@ var crew = {
 	"lookout": {"cost": 75, "effect": "risk_reduction"}
 }
 
-var player_money = 1000
+var player_money = 100
 var selected_goods = []
 var hired_crew = []
