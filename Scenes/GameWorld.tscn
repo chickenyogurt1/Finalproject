@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://bbmt0u7drjtdl"]
+[gd_scene load_steps=8 format=4 uid="uid://bbmt0u7drjtdl"]
 
-[ext_resource type="Texture2D" uid="uid://xxjlguc1qxej" path="res://Assets/Grassland Tileset.png" id="1_k42xh"]
+[ext_resource type="Texture2D" uid="uid://b5okxmgy7yx2m" path="res://Assets/Grassland Tileset.png" id="1_k42xh"]
 [ext_resource type="PackedScene" uid="uid://dgbc4niik8cuo" path="res://Scenes/Player.tscn" id="2_f0ret"]
-[ext_resource type="Texture2D" uid="uid://1dpdf1fnnwki" path="res://Assets/foods/canned_soup.png" id="3_tnnpc"]
+[ext_resource type="Texture2D" uid="uid://dggurqbt8vepq" path="res://Assets/foods/canned_soup.png" id="3_tnnpc"]
+[ext_resource type="PackedScene" uid="uid://d3720ewl8h51q" path="res://Scenes/Police.tscn" id="4_ywpc4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mjli"]
 texture = ExtResource("1_k42xh")
@@ -1708,3 +1709,6 @@ shape = SubResource("RectangleShape2D_ywpc4")
 
 [node name="Player" parent="." instance=ExtResource("2_f0ret")]
 position = Vector2(557, 329)
+
+[node name="Police" parent="." instance=ExtResource("4_ywpc4")]
+position = Vector2(212, 592)
