@@ -65,6 +65,10 @@ func get_total_in_hand(hand_area: Node) -> int:
 	return total
 
 func timerOver():
+	for bill in get_tree().get_nodes_in_group("bills"):
+		bill.locked = true
+		bill.draggable = false
+		bill.dragging = false
 	var moneyNeeded = Global.player_money * 0.2 + randi_range(-20, 60)
 	if get_total_in_hand($handarea) >= moneyNeeded:
 		$textbox.text = get_random_officer_response(true)
