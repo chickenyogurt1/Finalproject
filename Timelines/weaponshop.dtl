@@ -1,0 +1,16 @@
+WeaponShop: Looking to buy something?
+- Yeah, what do you have?
+	WeaponShop: Got a pistol, 900 bucks. Or a knife, 100. Your pick.
+	- I'll buy the knife. [$100]
+		if Global.player_money >= 100:
+			WeaponShop: Better than nothing.
+			do Global._add_knife()
+	- I'll take the pistol. [$900]
+		if Global.player_money >= 900:
+			WeaponShop: Good choice. Here.
+			do Global._add_pistol()
+		else:
+			WeaponShop: Good try. Come back when you have some cash
+- No thanks.
+	WeaponShop: Your call. Just don’t bleed on my doorstep.
+	[end_timeline]

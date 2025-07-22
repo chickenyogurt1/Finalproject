@@ -24,10 +24,6 @@ func _ready() -> void:
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	#main_character = get_tree().get_nodes_in_group("main_character")[0]
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _physics_process(delta: float) -> void:
 	var main_char_pos = main_character.global_position
 	var pos = global_position

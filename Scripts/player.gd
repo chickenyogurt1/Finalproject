@@ -10,7 +10,7 @@ func get_input():
 	input.y= Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	return input.normalized()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var playerInput = get_input()
 	if playerInput != Vector2.ZERO:
 		velocity = playerInput * SPEED
