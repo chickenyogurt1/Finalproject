@@ -1,18 +1,25 @@
 extends Node2D
+
 var draggable := false
 var dragging := false
 var is_inside_dropable := false
 var body_ref
 var offset := Vector2.ZERO
 var initialPos := Vector2.ZERO
-var mouse_over
+var mouse_over := false
+var spawnPos := Vector2.ZERO
 
-# Static variable to track which bill is currently being dragged
+@export var bill_texture: Texture2D
+@export var bill_value: int
+
 static var currently_dragged
+var locked := false
+
+func _ready() -> void:
+	$Sprite2D.texture = bill_texture
 
 func _process(_delta: float) -> void:
-	if not dragging and draggable and Input.is_action_just_pressed("Click") and mouse_over:
-		# Only allow drag if no other bill is dragging
+	if not dragging and not locked and draggable and Input.is_action_just_pressed("Click") and mouse_over:
 		if currently_dragged == null:
 			currently_dragged = self
 			dragging = true
@@ -25,26 +32,31 @@ func _process(_delta: float) -> void:
 		elif Input.is_action_just_released("Click"):
 			dragging = false
 			currently_dragged = null
-			var tween = get_tree().create_tween()
+			var tween := get_tree().create_tween()
 			if is_inside_dropable and body_ref:
-				tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)
-				rotation_degrees = randi_range(-30,30)
-				mouse_over = false
+				if body_ref.is_in_group("locked"):
+					tween.tween_property(self, "global_position", body_ref.global_position, 0.2).set_ease(Tween.EASE_OUT)
+					locked = true
+					rotation_degrees = randi_range(-30, 30)
+					mouse_over = false
+				else:
+					tween.tween_property(self, "global_position", spawnPos, 0.2).set_ease(Tween.EASE_OUT)
+					locked = false
+					mouse_over = false
 			else:
-				tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
+				tween.tween_property(self, "global_position", spawnPos, 0.2).set_ease(Tween.EASE_OUT)
+				locked = false
 				mouse_over = false
 
 func _on_area_2d_mouse_entered() -> void:
 	mouse_over = true
 	if not dragging:
 		draggable = true
-		scale = Vector2(1.035, 1.035)
 
 func _on_area_2d_mouse_exited() -> void:
 	mouse_over = false
 	if not dragging:
 		draggable = false
-		scale = Vector2(1, 1)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("dropable"):

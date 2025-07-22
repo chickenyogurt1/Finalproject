@@ -11,6 +11,6 @@ var crew = {
 	"lookout": {"cost": 75, "effect": "risk_reduction"}
 }
 
-var player_money = 100
+var player_money = 325
 var selected_goods = []
 var hired_crew = []

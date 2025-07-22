@@ -1,32 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwgefvegpq4fb"]
+[gd_scene load_steps=6 format=3 uid="uid://bwgefvegpq4fb"]
 
-[ext_resource type="Texture2D" uid="uid://cl2rfn7f4ypu0" path="res://Assets/5d2403a3-53d7-4e86-833f-2c0fa93ac692_large-removebg-preview.png" id="1_ovfoh"]
+[ext_resource type="Script" uid="uid://4simlvctignl" path="res://UI/bribe_ui.gd" id="1_aw5or"]
+[ext_resource type="Texture2D" uid="uid://8joilv2xvkcu" path="res://Assets/ChatGPT Image Jul 22, 2025, 09_47_59 AM.png" id="2_gkmm0"]
 [ext_resource type="Texture2D" uid="uid://b7rbqmag0amca" path="res://Assets/ChatGPT Image Jul 21, 2025, 10_56_06 AM.png" id="2_vabww"]
-[ext_resource type="PackedScene" uid="uid://bb8yqmhj5m6c2" path="res://Assets/money/draggableMoney.tscn" id="4_gkmm0"]
 [ext_resource type="PackedScene" uid="uid://ckdh7dk2bpyxc" path="res://Assets/money/dropablearea.tscn" id="4_u26uc"]
+[ext_resource type="FontFile" uid="uid://cc64ejuk0pal7" path="res://Assets/font/Tiny5-Regular.ttf" id="5_u26uc"]
 
 [node name="BribeUi" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_aw5or")
 
-[node name="5d2403a3-53d7-4e86-833f-2c0Fa93Ac692Large-removebg-preview" type="Sprite2D" parent="."]
-position = Vector2(242, 369)
-rotation = 1.5708
-texture = ExtResource("1_ovfoh")
-
-[node name="ChatGptImageJul21,2025,105606Am" type="Sprite2D" parent="."]
-position = Vector2(592, -465)
-scale = Vector2(0.600098, 0.600098)
+[node name="pocket" type="Sprite2D" parent="."]
+position = Vector2(417.667, -722.226)
+scale = Vector2(0.778321, 0.728518)
 texture = ExtResource("2_vabww")
 offset = Vector2(466.174, 1491.01)
 
-[node name="Dropablearea2" parent="." instance=ExtResource("4_u26uc")]
-position = Vector2(895, 346)
-scale = Vector2(19.475, 14.606)
+[node name="hand" type="Sprite2D" parent="."]
+position = Vector2(231, 366)
+rotation = 1.56928
+scale = Vector2(0.457969, 0.457969)
+texture = ExtResource("2_gkmm0")
 
-[node name="Dropablearea" parent="." instance=ExtResource("4_u26uc")]
-position = Vector2(269, 364)
+[node name="pocketarea" parent="." instance=ExtResource("4_u26uc")]
+position = Vector2(807, 286)
+scale = Vector2(23.25, 13.711)
+
+[node name="handarea" parent="." groups=["locked"] instance=ExtResource("4_u26uc")]
+position = Vector2(264, 357)
 scale = Vector2(12, 9)
 
-[node name="Bill" parent="." instance=ExtResource("4_gkmm0")]
-position = Vector2(849, 364)
+[node name="timer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = -20.0
+offset_right = 521.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("5_u26uc")
+theme_override_font_sizes/font_size = 131
+
+[node name="BillsContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 567.0
+offset_top = 145.0
+offset_right = 1036.0
+offset_bottom = 420.0
+mouse_filter = 2
+
+[node name="textbox" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 471.0
+offset_right = 385.0
+offset_bottom = 629.0
+theme_override_fonts/font = ExtResource("5_u26uc")
+theme_override_font_sizes/font_size = 36
+autowrap_mode = 3
