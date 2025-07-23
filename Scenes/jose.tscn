@@ -1,7 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://6gnyvk1ttcm4"]
-
-[ext_resource type="Script" uid="uid://dtdmv7y7usjlw" path="res://1Characters/player.gd" id="1_ityq8"]
-[ext_resource type="Texture2D" uid="uid://dhbu6llu121uw" path="res://currcharsheet.png" id="2_oxj68"]
+[gd_scene load_steps=13 format=3 uid="uid://ua60uxpn4an"]
 
 [sub_resource type="Animation" id="Animation_ix41i"]
 length = 0.001
@@ -116,7 +113,6 @@ graph_offset = Vector2(62.64, -54.075)
 size = Vector2(27, 48)
 
 [node name="jose" type="CharacterBody2D"]
-script = ExtResource("1_ityq8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-3, 39)
@@ -125,7 +121,6 @@ position_smoothing_enabled = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-3, 0)
 scale = Vector2(1.08, 1.08)
-texture = ExtResource("2_oxj68")
 offset = Vector2(1, 0)
 hframes = 10
 vframes = 7

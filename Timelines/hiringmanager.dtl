@@ -1,0 +1,11 @@
+hiringshop: You look like you could use protection. Got coin?
+- How much are we talking?
+	hiringshop: Depends on who you pick. Some might run you over $1000
+	- Never mind.
+		[end_timeline]
+	- Show me the options.
+		do Global._open_hiring_UI()
+- I can handle myself.
+	[end_timeline]
+- Depends. Who’s available?
+	do Global._open_hiring_UI()

@@ -21,3 +21,10 @@ func _add_pistol():
 
 func _add_knife():
 	print("addedknife")
+
+
+func _open_hiring_UI():
+	var hire_ui_scene = preload("res://UI/HiringUI.tscn")
+	var hire_ui = hire_ui_scene.instantiate()
+	add_child(hire_ui)
+	hire_ui.position = Vector2(100, 100)
