@@ -57,14 +57,13 @@ animations = [{
 size = Vector2(36, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8nax"]
-size = Vector2(264, 189)
+size = Vector2(179, 128.5)
 
 [node name="Weaponshopnpcman" type="Node2D"]
 script = ExtResource("1_d1j0v")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(0, -96)
-scale = Vector2(1.5, 1.5)
+position = Vector2(0, -64)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
@@ -77,16 +76,17 @@ shape = SubResource("RectangleShape2D_y4f26")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -31.0
-offset_top = -126.0
+offset_top = -94.0
 offset_right = 32.0
-offset_bottom = -103.0
+offset_bottom = -71.0
 text = "E to talk"
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -95)
+position = Vector2(-1, -66)
 shape = SubResource("RectangleShape2D_b8nax")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

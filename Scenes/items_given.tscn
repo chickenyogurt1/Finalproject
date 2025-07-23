@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhds0k4foukej"]
+
+[ext_resource type="Script" uid="uid://bafngx5utax51" path="res://Scripts/items_given.gd" id="1_3eyvc"]
+[ext_resource type="Texture2D" uid="uid://i1kkc6bebcho" path="res://Assets/image-removebg-preview (1).png" id="2_peg5v"]
+
+[node name="ItemsGiven" type="Node2D"]
+script = ExtResource("1_3eyvc")
+
+[node name="pallet" type="Sprite2D" parent="."]
+position = Vector2(593, 359)
+texture = ExtResource("2_peg5v")
