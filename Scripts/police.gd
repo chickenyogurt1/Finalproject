@@ -8,7 +8,7 @@ const BULLETS := 5
 
 var type: int
 @onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
-@onready var main_character: CharacterBody2D = $"../Player"
+@onready var main_character: CharacterBody2D = $"../Jose/CharacterBody2D"
 var main_player_found: bool = false
 var last_shot: float = 0
 var bullets_left = BULLETS

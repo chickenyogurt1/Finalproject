@@ -1,21 +1,21 @@
 [gd_scene load_steps=118 format=3 uid="uid://d3720ewl8h51q"]
 
 [ext_resource type="Script" uid="uid://dq3gs8ls4dwl3" path="res://Scripts/police.gd" id="1_7dm2u"]
-[ext_resource type="Texture2D" uid="uid://btybcyrueevj0" path="res://Assets/borderPpl/soldier1/Dead.png" id="2_st82t"]
-[ext_resource type="Texture2D" uid="uid://foj5cc0fj2cr" path="res://Assets/borderPpl/soldier2/Dead.png" id="3_38qno"]
-[ext_resource type="Texture2D" uid="uid://cxg8s7v5fc6bj" path="res://Assets/borderPpl/soldier3/Dead.png" id="4_36k6m"]
-[ext_resource type="Texture2D" uid="uid://1hiy1kv00iry" path="res://Assets/borderPpl/soldier1/Idle.png" id="5_s5m7v"]
-[ext_resource type="Texture2D" uid="uid://c2pfaxtly6ih1" path="res://Assets/borderPpl/soldier2/Idle.png" id="6_biga2"]
-[ext_resource type="Texture2D" uid="uid://d0w5taoixojsl" path="res://Assets/borderPpl/soldier3/Idle.png" id="7_pexw5"]
-[ext_resource type="Texture2D" uid="uid://daj1kojadfont" path="res://Assets/borderPpl/soldier1/Recharge.png" id="8_w0cn2"]
-[ext_resource type="Texture2D" uid="uid://bhbi0a76nima3" path="res://Assets/borderPpl/soldier2/Recharge.png" id="9_agoqj"]
-[ext_resource type="Texture2D" uid="uid://6un4rae0g0pt" path="res://Assets/borderPpl/soldier3/Recharge.png" id="10_qd4ue"]
-[ext_resource type="Texture2D" uid="uid://cxyk1pqfd37vf" path="res://Assets/borderPpl/soldier1/Shot_1.png" id="11_wwjwq"]
-[ext_resource type="Texture2D" uid="uid://bm162mnsvtlk3" path="res://Assets/borderPpl/soldier2/Shot_1.png" id="12_joqmm"]
-[ext_resource type="Texture2D" uid="uid://c5svrm7qh6l77" path="res://Assets/borderPpl/soldier3/Shot_1.png" id="13_r641n"]
-[ext_resource type="Texture2D" uid="uid://du6btkwa1fi0e" path="res://Assets/borderPpl/soldier1/Walk.png" id="14_t7wm0"]
-[ext_resource type="Texture2D" uid="uid://bpxlmdyoseru8" path="res://Assets/borderPpl/soldier2/Walk.png" id="15_lhtor"]
-[ext_resource type="Texture2D" uid="uid://bqij0wsfonl6q" path="res://Assets/borderPpl/soldier3/Walk.png" id="16_e0lla"]
+[ext_resource type="Texture2D" uid="uid://dgkvkr776egh4" path="res://Assets/borderPpl/soldier1/Dead.png" id="2_st82t"]
+[ext_resource type="Texture2D" uid="uid://bg51fy03ia2vw" path="res://Assets/borderPpl/soldier2/Dead.png" id="3_38qno"]
+[ext_resource type="Texture2D" uid="uid://c646jub23dupx" path="res://Assets/borderPpl/soldier3/Dead.png" id="4_36k6m"]
+[ext_resource type="Texture2D" uid="uid://buujcbvu1xccs" path="res://Assets/borderPpl/soldier1/Idle.png" id="5_s5m7v"]
+[ext_resource type="Texture2D" uid="uid://bb3tg25kfbryn" path="res://Assets/borderPpl/soldier2/Idle.png" id="6_biga2"]
+[ext_resource type="Texture2D" uid="uid://bwxb4cwb1utx6" path="res://Assets/borderPpl/soldier3/Idle.png" id="7_pexw5"]
+[ext_resource type="Texture2D" uid="uid://bk1b4we6hl6oe" path="res://Assets/borderPpl/soldier1/Recharge.png" id="8_w0cn2"]
+[ext_resource type="Texture2D" uid="uid://1qktl7x6efdj" path="res://Assets/borderPpl/soldier2/Recharge.png" id="9_agoqj"]
+[ext_resource type="Texture2D" uid="uid://b54c7kxe5aowh" path="res://Assets/borderPpl/soldier3/Recharge.png" id="10_qd4ue"]
+[ext_resource type="Texture2D" uid="uid://dh11kwn27buny" path="res://Assets/borderPpl/soldier1/Shot_1.png" id="11_wwjwq"]
+[ext_resource type="Texture2D" uid="uid://bmek6vrwlp2n3" path="res://Assets/borderPpl/soldier2/Shot_1.png" id="12_joqmm"]
+[ext_resource type="Texture2D" uid="uid://dpp12kt84bste" path="res://Assets/borderPpl/soldier3/Shot_1.png" id="13_r641n"]
+[ext_resource type="Texture2D" uid="uid://cbjqyiflicu6c" path="res://Assets/borderPpl/soldier1/Walk.png" id="14_t7wm0"]
+[ext_resource type="Texture2D" uid="uid://bnlq5soibw8yh" path="res://Assets/borderPpl/soldier2/Walk.png" id="15_lhtor"]
+[ext_resource type="Texture2D" uid="uid://dsyavcmfcsvag" path="res://Assets/borderPpl/soldier3/Walk.png" id="16_e0lla"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_allev"]
 atlas = ExtResource("2_st82t")
@@ -789,7 +789,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dloi"]
-size = Vector2(36, 66)
+size = Vector2(24, 42)
 
 [node name="Police" type="Node2D"]
 script = ExtResource("1_7dm2u")
@@ -800,9 +800,11 @@ scale = Vector2(1.5, 1.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
+position = Vector2(0, 23)
+scale = Vector2(0.640625, 0.640625)
 sprite_frames = SubResource("SpriteFrames_d8jha")
 animation = &"walk3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 30.6667)
+position = Vector2(0, 43)
 shape = SubResource("RectangleShape2D_6dloi")
