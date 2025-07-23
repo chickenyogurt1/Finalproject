@@ -26,6 +26,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var main_char_pos = main_character.animated_sprite.global_position
 	var pos = global_position
+	
+	if (main_character.arrested):
+		if (pos.distance_to(main_char_pos) > 100):
+			global_position = global_position.move_toward(main_char_pos, 5)
+		return
 	#print(main_player_found)
 	if main_player_found == true:
 		if animated_sprite.flip_h == true and main_char_pos.x >= pos.x:
@@ -63,7 +68,7 @@ func _physics_process(delta: float) -> void:
 func _on_animation_finished():
 	if animated_sprite.animation.contains("shoot"):
 		bullets_left -= 1
-		main_character.take_damage(1)
+		await main_character.take_damage(1, true)
 		animated_sprite.play(get_animation("idle"))
 	elif animated_sprite.animation.contains("recharge"):
 		animated_sprite.play(get_animation("idle"))

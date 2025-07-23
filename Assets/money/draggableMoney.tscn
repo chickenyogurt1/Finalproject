@@ -9,6 +9,7 @@ size = Vector2(30, 66.3333)
 script = ExtResource("2_usa25")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(3, 3)
 region_rect = Rect2(50, 50, 50, 50)
 

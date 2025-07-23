@@ -7,18 +7,26 @@ const INITIAL_HEALTH = 20
 
 var input: Vector2
 var health: float
+var arrested := false
 @onready var body: CharacterBody2D = $JoseCharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $JoseCharacterBody2D/AnimatedSprite2D
+@onready var arrested_panel: Control = $JoseCharacterBody2D/Arrested
 
+func get_arrested():
+	arrested_panel.visible = true
+	animated_sprite.play("idle")
+	arrested = true
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file("res://UI/BribeUI.tscn")
 
 func die() -> void:
 	animated_sprite.play("dead")
 
-func take_damage(amount: int) -> void:
+func take_damage(amount: int, arrest: bool) -> void:
 	health -= amount
 	print("Main character health: " + str(health))
 	if (health <= 0):
-		die()
+		await get_arrested() if arrest else die()
 
 func _on_animation_finished():
 	if animated_sprite.animation == "dead":
@@ -35,7 +43,7 @@ func get_input():
 	input.y= Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	return input.normalized()
 
-func _process(_delta: float) -> void:
+func _process(_delta: float) -> void:	
 	var playerInput = get_input()
 	
 	# Player texture changes

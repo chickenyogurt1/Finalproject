@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgwxt8kdl8dfm"]
 
-[ext_resource type="Script" uid="uid://pktcswy7xwwe" path="res://UI/hiring_ui.gd" id="1_5lkhr"]
-[ext_resource type="FontFile" uid="uid://cc64ejuk0pal7" path="res://Assets/font/Tiny5-Regular.ttf" id="1_pruvd"]
+[ext_resource type="Script" path="res://UI/hiring_ui.gd" id="1_5lkhr"]
+[ext_resource type="FontFile" uid="uid://bity8h0amft6u" path="res://Assets/font/Tiny5-Regular.ttf" id="1_pruvd"]
 
 [node name="HiringUi" type="Control"]
 layout_mode = 3

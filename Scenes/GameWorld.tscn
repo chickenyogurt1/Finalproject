@@ -1699,7 +1699,7 @@ position = Vector2(-343, 688)
 scale = Vector2(0.5, 0.5)
 
 [node name="Jose" parent="." instance=ExtResource("5_rpegc")]
-position = Vector2(453, 339)
+position = Vector2(576.025, 323.985)
 
 [node name="Police" parent="." instance=ExtResource("4_ywpc4")]
 position = Vector2(258, 538)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://psyr585sktee"]
+[gd_scene load_steps=29 format=3 uid="uid://psyr585sktee"]
 
 [ext_resource type="Script" uid="uid://w5ajbmu4x843" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cka1nismy61ox" path="res://currcharsheet.png" id="2_sx8lc"]
+[ext_resource type="FontFile" uid="uid://bity8h0amft6u" path="res://Assets/font/Tiny5-Regular.ttf" id="3_6t5aa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("2_sx8lc")
@@ -178,6 +179,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gysh"]
 size = Vector2(23, 59)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t5aa"]
+bg_color = Color(0, 0, 0, 0.501961)
+
 [node name="Jose" type="Node2D"]
 script = ExtResource("1_cvnsp")
 
@@ -197,3 +201,35 @@ position = Vector2(-1.5, -29.5)
 shape = SubResource("RectangleShape2D_0gysh")
 
 [node name="Camera2D" type="Camera2D" parent="JoseCharacterBody2D"]
+
+[node name="Arrested" type="Control" parent="JoseCharacterBody2D"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -576.025
+offset_top = -323.985
+offset_right = 575.975
+offset_bottom = 324.015
+
+[node name="arrested_dark" type="Panel" parent="JoseCharacterBody2D/Arrested"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6t5aa")
+
+[node name="arrested_text" type="Label" parent="JoseCharacterBody2D/Arrested"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 576.0
+offset_bottom = 158.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_6t5aa")
+theme_override_font_sizes/font_size = 55
+text = "You were arrested..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
