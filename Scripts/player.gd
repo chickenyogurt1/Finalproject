@@ -7,8 +7,8 @@ const INITIAL_HEALTH = 20
 
 var input: Vector2
 var health: float
-@onready var body: CharacterBody2D = $CharacterBody2D
-@onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+@onready var body: CharacterBody2D = $JoseCharacterBody2D
+@onready var animated_sprite: AnimatedSprite2D = $JoseCharacterBody2D/AnimatedSprite2D
 
 
 func die() -> void:

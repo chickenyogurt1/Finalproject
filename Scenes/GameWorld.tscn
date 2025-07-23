@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://bbmt0u7drjtdl"]
+[gd_scene load_steps=8 format=4 uid="uid://bbmt0u7drjtdl"]
 
-[ext_resource type="Texture2D" uid="uid://beelx0xue2bq2" path="res://Assets/Grassland Tileset.png" id="1_k42xh"]
+[ext_resource type="Texture2D" uid="uid://p8xq3irwxhgl" path="res://Assets/Grassland Tileset.png" id="1_k42xh"]
 [ext_resource type="PackedScene" uid="uid://d3720ewl8h51q" path="res://Scenes/Police.tscn" id="4_ywpc4"]
 [ext_resource type="PackedScene" uid="uid://dmjipc7xdbxnm" path="res://NPC/weaponshopnpcman.tscn" id="5_llaiv"]
 [ext_resource type="PackedScene" uid="uid://psyr585sktee" path="res://Scenes/player.tscn" id="5_rpegc"]
+[ext_resource type="PackedScene" uid="uid://bcghvhno0hxnu" path="res://NPC/hiringshopNPCman.tscn" id="5_xtikl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mjli"]
 texture = ExtResource("1_k42xh")
@@ -1694,10 +1695,15 @@ tile_map_data = PackedByteArray("AAAAAP//AAAAAAMAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAU
 tile_set = SubResource("TileSet_8u2an")
 
 [node name="Weaponshopnpcman" parent="." instance=ExtResource("5_llaiv")]
-position = Vector2(-411, 828)
+position = Vector2(-343, 688)
+scale = Vector2(0.5, 0.5)
 
 [node name="Jose" parent="." instance=ExtResource("5_rpegc")]
 position = Vector2(453, 339)
 
 [node name="Police" parent="." instance=ExtResource("4_ywpc4")]
 position = Vector2(258, 538)
+
+[node name="HiringshopNpCman" parent="." instance=ExtResource("5_xtikl")]
+position = Vector2(-354, 253)
+scale = Vector2(0.5, 0.5)

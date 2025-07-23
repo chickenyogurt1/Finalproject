@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://psyr585sktee"]
 
 [ext_resource type="Script" uid="uid://w5ajbmu4x843" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://cka1nismy61ox" path="res://currcharsheet.png" id="2_sx8lc"]
+[ext_resource type="Texture2D" uid="uid://bxjn0ha4misef" path="res://currcharsheet.png" id="2_sx8lc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("2_sx8lc")
@@ -181,10 +181,10 @@ size = Vector2(23, 59)
 [node name="Jose" type="Node2D"]
 script = ExtResource("1_cvnsp")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="JoseCharacterBody2D" type="CharacterBody2D" parent="."]
 texture_filter = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="JoseCharacterBody2D"]
 texture_filter = 1
 position = Vector2(0, -33)
 scale = Vector2(0.825, 0.825)
@@ -192,8 +192,8 @@ sprite_frames = SubResource("SpriteFrames_p1odr")
 animation = &"dead"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JoseCharacterBody2D"]
 position = Vector2(-1.5, -29.5)
 shape = SubResource("RectangleShape2D_0gysh")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="JoseCharacterBody2D"]

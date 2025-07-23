@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bcghvhno0hxnu"]
 
-[ext_resource type="Texture2D" uid="uid://dpx6x5ck043l6" path="res://Assets/citizens/2/Idle.png" id="1_i66s6"]
+[ext_resource type="Texture2D" uid="uid://3e6dp4341shs" path="res://Assets/citizens/2/Idle.png" id="1_i66s6"]
 [ext_resource type="Script" uid="uid://kh13delutgnl" path="res://NPC/hiringshop_np_cman.gd" id="1_rwkxf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwkxf"]
@@ -96,3 +96,6 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -95)
 shape = SubResource("RectangleShape2D_euwfh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

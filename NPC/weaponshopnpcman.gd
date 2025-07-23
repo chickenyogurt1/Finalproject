@@ -12,13 +12,13 @@ func _process(_delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "JoseCharacterBody2D":
 		player_in_range = true
 		$Label.visible = true
 
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "JoseCharacterBody2D":
 		player_in_range = false
 		$Label.visible = false

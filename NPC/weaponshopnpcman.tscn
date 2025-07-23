@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dmjipc7xdbxnm"]
 
 [ext_resource type="Script" uid="uid://b21jo1vta7eoj" path="res://NPC/weaponshopnpcman.gd" id="1_d1j0v"]
-[ext_resource type="Texture2D" uid="uid://dnf3ren5d4ix8" path="res://Assets/citizens/1/Idle.png" id="1_fvq8v"]
+[ext_resource type="Texture2D" uid="uid://c1sif1rx6df45" path="res://Assets/citizens/1/Idle.png" id="1_fvq8v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1j0v"]
 atlas = ExtResource("1_fvq8v")
