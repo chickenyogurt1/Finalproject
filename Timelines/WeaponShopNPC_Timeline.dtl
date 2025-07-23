@@ -1,0 +1,22 @@
+WeaponShopNPC: Hey amigo you want to buy some weapons?
+- Sure, what do you have
+	WeaponShopNPC: Got a pistol, 900 bucks. Or a knife, 100. Your pick.
+	- I’ll take the knife. [100$]
+		if Global.player_money >= 100.0:
+			WeaponShopNPC: Better than nothing.
+			do Global._add_knife()
+			[end_timeline]
+		else:
+			WeaponShopNPC: Nice try. Come back when you’re not broke.
+			[end_timeline]
+	- I’ll take the pistol. [$900]
+		if Global.player_money  >= 900.0:
+			WeaponShopNPC: Smart choice. Here.
+			do Global._add_pistol()
+			[end_timeline]
+		else:
+			WeaponShopNPC: Good try. Come back when you’re not broke.
+			[end_timeline]
+- No thanks
+	WeaponShopNPC: Your call. Just don't bleed on my doorstep.
+	[end_timeline]

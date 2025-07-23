@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://4c4i76654je7"]
+
+[ext_resource type="Script" uid="uid://b1sb4cj7gqcmv" path="res://UI/hiringline.gd" id="1_420j8"]
+[ext_resource type="Texture2D" uid="uid://cwst1l7xbdd6q" path="res://Assets/bosscartelwtv/buzzcut/Idle.png" id="1_v7y4h"]
+[ext_resource type="FontFile" uid="uid://cc64ejuk0pal7" path="res://Assets/font/Tiny5-Regular.ttf" id="2_420j8"]
+
+[node name="hiringline" type="Control"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_420j8")
+
+[node name="pic" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -76.0
+offset_right = 167.0
+offset_bottom = 114.0
+texture = ExtResource("1_v7y4h")
+expand_mode = 1
+
+[node name="text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 8.0
+offset_right = 835.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_420j8")
+theme_override_font_sizes/font_size = 46
+text = "blah blah blah"
+autowrap_mode = 3
+
+[node name="hirebutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 845.0
+offset_top = 9.0
+offset_right = 1008.0
+offset_bottom = 122.0
+theme_override_fonts/font = ExtResource("2_420j8")
+theme_override_font_sizes/font_size = 76
+text = "Hire"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(9.325, 135.03)
+scale = Vector2(0.965941, 1)
+points = PackedVector2Array(-2, 3, 829.201, 3, 1035, 3)
+
+[connection signal="pressed" from="hirebutton" to="." method="_on_button_pressed"]

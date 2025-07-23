@@ -72,8 +72,10 @@ func timerOver():
 	var moneyNeeded = Global.player_money * 0.2 + randi_range(-20, 60)
 	if get_total_in_hand($handarea) >= moneyNeeded:
 		$textbox.text = get_random_officer_response(true)
+		Global.player_money -= get_total_in_hand($handarea)
 	else:
 		$textbox.text = get_random_officer_response(false)
+		Global.player_money -= get_total_in_hand($handarea)
 
 
 func get_random_officer_response(accepted: bool) -> String:

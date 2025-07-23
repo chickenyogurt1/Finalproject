@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var dialog_timeline: String = "res://Timelines/weaponshop.dtl"
+@export var dialog_timeline: String = "res://Timelines/hiringmanager.dtl"
 var player_in_range = false
 
 func _ready():
