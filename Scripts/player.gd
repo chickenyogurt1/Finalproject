@@ -1,14 +1,34 @@
+class_name Jose
 extends Node2D
 
 const SPEED = 300.0
 const ACCEL = 2.0
+const INITIAL_HEALTH = 20
 
 var input: Vector2
+var health: float
 @onready var body: CharacterBody2D = $CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 
+
+func die() -> void:
+	animated_sprite.play("dead")
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	print("Main character health: " + str(health))
+	if (health <= 0):
+		die()
+
+func _on_animation_finished():
+	if animated_sprite.animation == "dead":
+		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+
 func _ready() -> void:
-	add_to_group("main_character")
+	health = INITIAL_HEALTH
+	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
+	
+	print("Main character health: " + str(health))
 
 func get_input():
 	input.x= Input.get_action_strength("Right") - Input.get_action_strength("Left")

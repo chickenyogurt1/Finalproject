@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://beelx0xue2bq2" path="res://Assets/Grassland Tileset.png" id="1_k42xh"]
 [ext_resource type="PackedScene" uid="uid://d3720ewl8h51q" path="res://Scenes/Police.tscn" id="4_ywpc4"]
 [ext_resource type="PackedScene" uid="uid://dmjipc7xdbxnm" path="res://NPC/weaponshopnpcman.tscn" id="5_llaiv"]
-[ext_resource type="PackedScene" uid="uid://4bns03m4hn0u" path="res://Scenes/player.tscn" id="5_rpegc"]
+[ext_resource type="PackedScene" uid="uid://psyr585sktee" path="res://Scenes/player.tscn" id="5_rpegc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mjli"]
 texture = ExtResource("1_k42xh")

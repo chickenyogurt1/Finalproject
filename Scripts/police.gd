@@ -8,7 +8,7 @@ const BULLETS := 5
 
 var type: int
 @onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
-@onready var main_character: CharacterBody2D = $"../Jose/CharacterBody2D"
+@onready var main_character: Jose = $"../Jose"
 var main_player_found: bool = false
 var last_shot: float = 0
 var bullets_left = BULLETS
@@ -22,7 +22,6 @@ func _ready() -> void:
 	type = random.randi_range(1, 3)
 	animated_sprite.play(get_animation("idle"))
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
-	#main_character = get_tree().get_nodes_in_group("main_character")[0]
 
 func _physics_process(delta: float) -> void:
 	var main_char_pos = main_character.global_position
@@ -64,7 +63,7 @@ func _physics_process(delta: float) -> void:
 func _on_animation_finished():
 	if animated_sprite.animation.contains("shoot"):
 		bullets_left -= 1
-		#main_character.take_damage(1)
+		main_character.take_damage(1)
 		animated_sprite.play(get_animation("idle"))
 	elif animated_sprite.animation.contains("recharge"):
 		animated_sprite.play(get_animation("idle"))

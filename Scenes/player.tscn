@@ -109,7 +109,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3smsa")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -189,10 +189,11 @@ texture_filter = 1
 position = Vector2(0, -33)
 scale = Vector2(0.825, 0.825)
 sprite_frames = SubResource("SpriteFrames_p1odr")
-animation = &"idle"
+animation = &"dead"
 autoplay = "idle"
-frame_progress = 0.630628
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-1.5, -29.5)
 shape = SubResource("RectangleShape2D_0gysh")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
