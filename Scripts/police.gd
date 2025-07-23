@@ -24,7 +24,7 @@ func _ready() -> void:
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 func _physics_process(delta: float) -> void:
-	var main_char_pos = main_character.global_position
+	var main_char_pos = main_character.animated_sprite.global_position
 	var pos = global_position
 	#print(main_player_found)
 	if main_player_found == true:
@@ -45,8 +45,8 @@ func _physics_process(delta: float) -> void:
 			global_position = global_position.move_toward(main_char_pos, 5)
 			animated_sprite.play(get_animation("walk"))
 		elif (animated_sprite.animation.contains("walk")):
-				animated_sprite.play(get_animation("idle"))
-		
+			animated_sprite.play(get_animation("idle"))
+				
 		if last_shot > SHOOT_COOLDOWN:
 			last_shot = 0
 			animated_sprite.play(get_animation("shoot"))
