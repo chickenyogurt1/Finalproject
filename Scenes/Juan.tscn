@@ -330,7 +330,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dloi"]
-size = Vector2(24, 43.3333)
+size = Vector2(11, 30.3333)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je3uf"]
 bg_color = Color(0, 0, 0, 0.501961)
@@ -355,32 +355,32 @@ scale = Vector2(1.5, 1.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(0, 23)
-scale = Vector2(0.640625, 0.640625)
+position = Vector2(9.53674e-07, 36)
+scale = Vector2(0.434896, 0.434896)
 sprite_frames = SubResource("SpriteFrames_d8jha")
 animation = &"recharge"
 frame = 16
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 42.3333)
+position = Vector2(-1.33333, 49.3333)
 shape = SubResource("RectangleShape2D_6dloi")
 
 [node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D"]
-offset_left = -11.0
-offset_top = 15.0
-offset_right = 11.0
-offset_bottom = 19.0
+offset_left = -12.3334
+offset_top = 26.3333
+offset_right = 9.66663
+offset_bottom = 30.3333
 theme_override_styles/background = SubResource("StyleBoxFlat_je3uf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_i5ebj")
 value = 100.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="CharacterBody2D"]
-offset_left = -19.3333
-offset_top = 4.0
-offset_right = 20.6667
-offset_bottom = 27.0
+offset_left = -20.6667
+offset_top = 15.3333
+offset_right = 19.3333
+offset_bottom = 38.3333
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
