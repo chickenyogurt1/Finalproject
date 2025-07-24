@@ -15,13 +15,8 @@ var goods = {
 	"soup": {"weight": 2, "value": 35, "risk": 0.8}
 }
 
-var crew = {
-	"lookout": {"cost": 75, "effect": "risk_reduction"}
-}
-
 var player_money: int = 900
 var player_health: float
-var selected_goods = []
 var hired_crew = []
 
 var last_delivered_item: String = ""
