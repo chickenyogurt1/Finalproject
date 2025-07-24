@@ -43,8 +43,7 @@ func die() -> void:
 	animated_sprite.play("dead")
 
 func take_damage(amount: int, arrest: bool) -> void:
-	health -= amount
-	progress_bar.value = health / INITIAL_HEALTH * 100
+	update_health(health - amount)
 	if (health <= 0):
 		await get_arrested() if arrest else die()
 
@@ -68,6 +67,10 @@ func get_input():
 	input.x= Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	input.y= Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	return input.normalized()
+	
+func update_health(value: float):
+	health = value
+	progress_bar.value = health / INITIAL_HEALTH * 100
 
 func _process(delta: float) -> void:
 	if (animated_sprite.animation == "dead"):
@@ -76,7 +79,7 @@ func _process(delta: float) -> void:
 	regen_cooldown += delta
 	if (regen_cooldown > REGEN_COOLDOWN):
 		regen_cooldown = 0
-		health += 5
+		update_health(health + 5)
 	
 	hit_cooldown += delta
 	

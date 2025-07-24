@@ -259,6 +259,7 @@ offset_bottom = -414.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3wgy")
 
 [node name="ProgressBar" type="ProgressBar" parent="JoseCharacterBody2D/Control"]
+layout_mode = 0
 offset_left = -898.0
 offset_top = -465.0
 offset_right = -690.0

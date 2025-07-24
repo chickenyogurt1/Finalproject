@@ -44,6 +44,10 @@ func get_nearest_police():
 	
 	return nearest_police
 
+func update_health(value: float):
+	health = value
+	progress_bar.value = health / INITIAL_HEALTH * 100
+
 func _physics_process(delta: float) -> void:
 	if (animated_sprite.animation == "dead"):
 		return
@@ -51,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	regen_cooldown += delta
 	if (health < INITIAL_HEALTH and regen_cooldown > REGEN_COOLDOWN):
 		regen_cooldown = 0
-		health += 5
+		update_health(health + 5)
 
 	var police = get_nearest_police()
 	#if police == null:
@@ -110,7 +114,6 @@ func die() -> void:
 	animated_sprite.play("dead")
 
 func take_damage(amount: int, arrest: bool) -> void:
-	health -= amount
-	progress_bar.value = health / INITIAL_HEALTH * 100
+	update_health(health - amount)
 	if (health <= 0):
 		die()

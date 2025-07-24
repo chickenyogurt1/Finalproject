@@ -46,6 +46,10 @@ func get_nearest_smuggler():
 	
 	return nearest_smuggler
 
+func update_health(value: float):
+	health = value
+	progress_bar.value = health / MAX_HEALTH * 100
+
 func _physics_process(delta: float) -> void:
 	if (animated_sprite.animation.contains("dead")):
 		return
@@ -53,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	regen_cooldown += delta
 	if (regen_cooldown > REGEN_COOLDOWN):
 		regen_cooldown = 0
-		health += 5
+		update_health(health + 5)
 	
 	var smuggler = get_nearest_smuggler()
 	if (smuggler == null):
@@ -102,8 +106,7 @@ func _physics_process(delta: float) -> void:
 
 
 func take_damage(amount: int):
-	health -= amount
-	progress_bar.value = health / MAX_HEALTH * 100
+	update_health(health - amount)
 	if (health <= 0):
 		die()
 
