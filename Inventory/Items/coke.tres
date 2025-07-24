@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://duvswe7ywy88p"]
+
+[ext_resource type="Script" uid="uid://x8sclp3hkilo" path="res://Inventory/inventory_item.gd" id="1_bntlc"]
+[ext_resource type="Texture2D" uid="uid://cuj7ulnu8va8a" path="res://Assets/foods/soda_coke.png" id="2_k5dwa"]
+
+[resource]
+script = ExtResource("1_bntlc")
+name = "coke"
+texture = ExtResource("2_k5dwa")
+metadata/_custom_type_script = "uid://x8sclp3hkilo"

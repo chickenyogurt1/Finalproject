@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbmt0u7drjtdl"]
+[gd_scene load_steps=11 format=3 uid="uid://bbmt0u7drjtdl"]
 
 [ext_resource type="PackedScene" uid="uid://djx26crt3hjf2" path="res://Scenes/map.tscn" id="1_xtikl"]
 [ext_resource type="Resource" uid="uid://yna5yg16114x" path="res://Inventory/playerInv.tres" id="4_k07wl"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://psyr585sktee" path="res://Scenes/player.tscn" id="5_rpegc"]
 [ext_resource type="PackedScene" uid="uid://bcghvhno0hxnu" path="res://NPC/hiringshopNPCman.tscn" id="5_xtikl"]
 [ext_resource type="PackedScene" uid="uid://4qrggjcmdlft" path="res://Inventory/Items/apple_item.tscn" id="6_rpegc"]
-[ext_resource type="Resource" uid="uid://bqjy3e8o8475u" path="res://Inventory/Items/apple.tres" id="7_xtikl"]
+[ext_resource type="PackedScene" uid="uid://dhds0k4foukej" path="res://Scenes/items_given.tscn" id="9_kycso"]
+[ext_resource type="PackedScene" uid="uid://b1n7tp1qbunb1" path="res://Inventory/Items/cheese_item.tscn" id="10_4sjua"]
+[ext_resource type="PackedScene" uid="uid://rwyoh8rvaxxv" path="res://Inventory/Items/soup_item.tscn" id="10_w0qho"]
 
 [node name="GameWorld" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [-9.0]
@@ -16,8 +18,12 @@ metadata/_edit_horizontal_guides_ = [-9.0]
 position = Vector2(331, 127)
 
 [node name="Weaponshopnpcman" parent="." instance=ExtResource("5_llaiv")]
-position = Vector2(300, 430)
+position = Vector2(693, -197)
 scale = Vector2(0.6, 0.6)
+
+[node name="ItemsGiven" parent="." instance=ExtResource("9_kycso")]
+position = Vector2(1103, 623)
+scale = Vector2(0.25, 0.25)
 
 [node name="Jose" parent="." instance=ExtResource("5_rpegc")]
 position = Vector2(581, 273)
@@ -29,10 +35,17 @@ position = Vector2(258, 538)
 scale = Vector2(0.4, 0.4)
 
 [node name="HiringshopNpCman" parent="." instance=ExtResource("5_xtikl")]
-position = Vector2(208, 264)
+position = Vector2(-111, 243)
 scale = Vector2(0.6, 0.6)
 
 [node name="AppleItem" parent="." instance=ExtResource("6_rpegc")]
 position = Vector2(910, 137)
 scale = Vector2(0.6, 0.6)
-item = ExtResource("7_xtikl")
+
+[node name="Soup_Item" parent="." instance=ExtResource("10_w0qho")]
+position = Vector2(772, 107)
+scale = Vector2(0.6, 0.6)
+
+[node name="cheese_item" parent="." instance=ExtResource("10_4sjua")]
+position = Vector2(778, 208)
+scale = Vector2(0.6, 0.6)
