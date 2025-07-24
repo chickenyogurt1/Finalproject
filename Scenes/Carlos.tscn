@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://qynql13ytot"]
+[gd_scene load_steps=31 format=3 uid="uid://dvqfjeaue2cly"]
 
 [ext_resource type="Script" uid="uid://dxf6i5fg5sgl4" path="res://Scripts/carlos.gd" id="1_6bgxq"]
 [ext_resource type="Texture2D" uid="uid://dgaq0g6n5hb6t" path="res://Assets/bosscartelwtv/buzzcut/Attack.png" id="2_i5ebj"]
@@ -177,7 +177,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dloi"]
-size = Vector2(24, 43.3333)
+size = Vector2(10, 27)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je3uf"]
 bg_color = Color(0, 0, 0, 0.501961)
@@ -202,30 +202,30 @@ scale = Vector2(1.5, 1.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(0, 23)
-scale = Vector2(0.640625, 0.640625)
+position = Vector2(-7.45058e-09, 38.6667)
+scale = Vector2(0.397135, 0.397135)
 sprite_frames = SubResource("SpriteFrames_d8jha")
 animation = &"dead"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 42.3333)
+position = Vector2(-2.33333, 50.5)
 shape = SubResource("RectangleShape2D_6dloi")
 
 [node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D"]
-offset_left = -11.0
-offset_top = 15.0
-offset_right = 11.0
-offset_bottom = 19.0
+offset_left = -13.0
+offset_top = 29.6667
+offset_right = 8.99997
+offset_bottom = 33.6667
 theme_override_styles/background = SubResource("StyleBoxFlat_je3uf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_i5ebj")
 value = 100.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="CharacterBody2D"]
-offset_left = -19.3333
-offset_top = 4.0
-offset_right = 20.6667
-offset_bottom = 27.0
+offset_left = -21.3333
+offset_top = 18.6667
+offset_right = 18.6667
+offset_bottom = 41.6667
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3

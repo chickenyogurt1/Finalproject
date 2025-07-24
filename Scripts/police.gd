@@ -1,13 +1,13 @@
 extends Node2D
 
 const SPEED := 150
-const FIGHT_RADIUS := 300
-const SEARCH_RADIUS := 600
-const CHASE_RADIUS := 1000
+const FIGHT_RADIUS := 100
+const SEARCH_RADIUS := 250
+const CHASE_RADIUS := 300
 const SHOOT_COOLDOWN := 1
 const BULLETS := 5
 const MAX_HEALTH := 20.0
-const REGEN_COOLDOWN := 5
+const REGEN_COOLDOWN := 7
 
 var health: float = MAX_HEALTH
 var type: int

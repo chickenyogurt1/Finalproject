@@ -8,7 +8,7 @@ const ACCEL = 2.0
 const INITIAL_HEALTH = 50.0
 const COOLDOWN := 1
 const REGEN_COOLDOWN := 5
-const FENCE_CLIMBING_TIME := 5
+const FENCE_CLIMBING_TIME := 7
 
 var attack_range = 100
 var strength = 5

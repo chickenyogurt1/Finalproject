@@ -1,10 +1,10 @@
 [gd_scene load_steps=38 format=3 uid="uid://psyr585sktee"]
 
 [ext_resource type="Script" uid="uid://w5ajbmu4x843" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bxjn0ha4misef" path="res://currcharsheet.png" id="2_sx8lc"]
-[ext_resource type="FontFile" uid="uid://dragx2ephlsf8" path="res://Assets/font/Tiny5-Regular.ttf" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://cka1nismy61ox" path="res://currcharsheet.png" id="2_sx8lc"]
+[ext_resource type="FontFile" uid="uid://bity8h0amft6u" path="res://Assets/font/Tiny5-Regular.ttf" id="3_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://c2ixm6kfvy0aa" path="res://Inventory/inv_ui.tscn" id="4_vgqql"]
-[ext_resource type="Script" uid="uid://0g2beem4osag" path="res://Scenes/money.gd" id="5_fkybt"]
+[ext_resource type="Script" path="res://Scenes/money.gd" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1odr"]
 atlas = ExtResource("2_sx8lc")

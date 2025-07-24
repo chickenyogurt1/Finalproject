@@ -1,14 +1,14 @@
 extends Node2D
 
 const STRENGTH := 5
-const SPEED := 200
+const SPEED := 150
 const COOLDOWN := 1
-const FIGHT_RADIUS := 300
-const SEARCH_RADIUS := 600
-const CHASE_RADIUS := 1000
+const FIGHT_RADIUS := 100
+const SEARCH_RADIUS := 250
+const CHASE_RADIUS := 300
 const INITIAL_HEALTH := 30.0
 const BULLETS := 7
-const REGEN_COOLDOWN := 5
+const REGEN_COOLDOWN := 7
 
 @onready var jose: Jose
 @onready var progress_bar: ProgressBar = $CharacterBody2D/ProgressBar
