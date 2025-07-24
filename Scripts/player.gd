@@ -8,6 +8,7 @@ const ACCEL = 2.0
 const INITIAL_HEALTH = 50.0
 const COOLDOWN := 1
 const REGEN_COOLDOWN := 5
+const FENCE_CLIMBING_TIME := 5
 
 var attack_range = 100
 var strength = 5
@@ -17,10 +18,13 @@ var regen_cooldown
 var input: Vector2
 var health: float
 var arrested := false
+@onready var border_collision: Area2D = $"../BorderCollision"
 @onready var body: CharacterBody2D = $JoseCharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $JoseCharacterBody2D/AnimatedSprite2D
 @onready var arrested_panel: Control = $JoseCharacterBody2D/Arrested
-@onready var progress_bar: ProgressBar = $JoseCharacterBody2D/Control/ProgressBar
+@onready var progress_bar: ProgressBar = $JoseCharacterBody2D/HP/ProgressBar
+@onready var fence_ui: Control = $JoseCharacterBody2D/Fence_Climbing
+@onready var fence_progress_bar: ProgressBar = $JoseCharacterBody2D/Fence_Climbing/ProgressBar
 
 func do_damage(receiver):
 	if (receiver.global_position.distance_to(body.global_position) > attack_range):
@@ -54,6 +58,7 @@ func _on_animation_finished():
 		animated_sprite.play("idle")
 
 func _ready() -> void:
+	fence_progress_bar.max_value = FENCE_CLIMBING_TIME
 	regen_cooldown = 0
 	hit_cooldown = COOLDOWN
 	health = INITIAL_HEALTH
@@ -75,6 +80,20 @@ func update_health(value: float):
 func _process(delta: float) -> void:
 	if (animated_sprite.animation == "dead"):
 		return
+	
+	var near_border := false
+	for collision_body in border_collision.get_overlapping_bodies():
+		if collision_body == body:
+			near_border = true
+			if not fence_ui.visible:
+				fence_ui.visible = true
+				fence_progress_bar.value = 0
+			if (Input.is_key_pressed(KEY_E)):
+				fence_progress_bar.value += delta
+				if (fence_progress_bar.value >= FENCE_CLIMBING_TIME):
+					body.position.y += 100
+	if not near_border and fence_ui.visible:
+		fence_ui.visible = false
 	
 	regen_cooldown += delta
 	if (regen_cooldown > REGEN_COOLDOWN):

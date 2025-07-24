@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbmt0u7drjtdl"]
+[gd_scene load_steps=12 format=3 uid="uid://bbmt0u7drjtdl"]
 
 [ext_resource type="PackedScene" uid="uid://djx26crt3hjf2" path="res://Scenes/map.tscn" id="1_xtikl"]
 [ext_resource type="Resource" uid="uid://yna5yg16114x" path="res://Inventory/playerInv.tres" id="4_k07wl"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dhds0k4foukej" path="res://Scenes/items_given.tscn" id="9_kycso"]
 [ext_resource type="PackedScene" uid="uid://b1n7tp1qbunb1" path="res://Inventory/Items/cheese_item.tscn" id="10_4sjua"]
 [ext_resource type="PackedScene" uid="uid://rwyoh8rvaxxv" path="res://Inventory/Items/soup_item.tscn" id="10_w0qho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0qho"]
+size = Vector2(1037.5, 70)
 
 [node name="GameWorld" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [-9.0]
@@ -49,3 +52,9 @@ scale = Vector2(0.6, 0.6)
 [node name="cheese_item" parent="." instance=ExtResource("10_4sjua")]
 position = Vector2(778, 208)
 scale = Vector2(0.6, 0.6)
+
+[node name="BorderCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderCollision"]
+position = Vector2(853.25, 878)
+shape = SubResource("RectangleShape2D_w0qho")

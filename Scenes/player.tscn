@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://psyr585sktee"]
+[gd_scene load_steps=36 format=3 uid="uid://psyr585sktee"]
 
 [ext_resource type="Script" uid="uid://w5ajbmu4x843" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cka1nismy61ox" path="res://currcharsheet.png" id="2_sx8lc"]
@@ -192,6 +192,20 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gysh"]
 size = Vector2(23, 59)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3smsa"]
+bg_color = Color(0.856067, 0.856067, 0.856067, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8erm5"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3wgy"]
 bg_color = Color(0, 0, 0, 0)
 corner_radius_top_left = 50
@@ -244,13 +258,50 @@ offset_top = -127.0
 offset_right = 42.0
 offset_bottom = -63.0
 
-[node name="Control" type="Control" parent="JoseCharacterBody2D"]
+[node name="Fence_Climbing" type="Control" parent="JoseCharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel" type="Panel" parent="JoseCharacterBody2D/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="JoseCharacterBody2D/Fence_Climbing"]
+offset_left = 21.0
+offset_top = -52.0
+offset_right = 56.0
+offset_bottom = -45.0
+theme_override_styles/background = SubResource("StyleBoxFlat_3smsa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8erm5")
+show_percentage = false
+
+[node name="Label" type="Label" parent="JoseCharacterBody2D/Fence_Climbing"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -62.0
+offset_right = 38.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.854902, 0.854902, 0.854902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "Press E
+to climb"
+horizontal_alignment = 1
+
+[node name="HP" type="Control" parent="JoseCharacterBody2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="JoseCharacterBody2D/HP"]
 layout_mode = 0
 offset_left = -922.0
 offset_top = -484.0
@@ -258,7 +309,7 @@ offset_right = -667.0
 offset_bottom = -414.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3wgy")
 
-[node name="ProgressBar" type="ProgressBar" parent="JoseCharacterBody2D/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="JoseCharacterBody2D/HP"]
 layout_mode = 0
 offset_left = -898.0
 offset_top = -465.0
@@ -269,7 +320,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_fkybt")
 value = 100.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="JoseCharacterBody2D/Control/ProgressBar"]
+[node name="Label" type="Label" parent="JoseCharacterBody2D/HP/ProgressBar"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
