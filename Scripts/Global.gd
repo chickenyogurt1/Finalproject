@@ -45,3 +45,16 @@ func confirm_trade() -> int:
 	player_money += value
 	offered_item = null
 	return value
+
+func _open_hiring_UI():
+	var hire_ui_scene = preload("res://UI/HiringUI.tscn")
+	var hire_ui = hire_ui_scene.instantiate()
+	var ui_layer = get_tree().root.get_node("/root/Main/CanvasLayer/UI")
+	ui_layer.add_child(hire_ui)
+
+
+func _add_pistol():
+	print("addedpistol")
+
+func _add_knife():
+	print("addedknife")
