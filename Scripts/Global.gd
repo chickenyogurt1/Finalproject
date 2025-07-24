@@ -3,6 +3,7 @@ extends Node
 
 const INITIAL_HEALTH = 50.0
 var progress_bar
+signal get_knife
 
 var player_inventory: Inv = null
 
@@ -45,3 +46,6 @@ func confirm_trade() -> int:
 	player_money += value
 	offered_item = null
 	return value
+
+func add_knife():
+	emit_signal("get_knife")
