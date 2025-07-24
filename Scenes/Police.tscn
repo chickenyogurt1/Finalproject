@@ -818,8 +818,8 @@ scale = Vector2(1.5, 1.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(0, 23)
-scale = Vector2(0.640625, 0.640625)
+position = Vector2(9.53674e-07, 35.3333)
+scale = Vector2(0.440104, 0.440104)
 sprite_frames = SubResource("SpriteFrames_d8jha")
 animation = &"walk3"
 
@@ -829,9 +829,9 @@ shape = SubResource("RectangleShape2D_6dloi")
 
 [node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D"]
 offset_left = -11.0
-offset_top = 15.0
+offset_top = 27.0
 offset_right = 11.0
-offset_bottom = 19.0
+offset_bottom = 31.0
 theme_override_styles/background = SubResource("StyleBoxFlat_7dm2u")
 theme_override_styles/fill = SubResource("StyleBoxFlat_st82t")
 value = 100.0
@@ -839,9 +839,9 @@ show_percentage = false
 
 [node name="Label" type="Label" parent="CharacterBody2D"]
 offset_left = -20.0
-offset_top = 2.66666
+offset_top = 14.6667
 offset_right = 20.0
-offset_bottom = 25.6667
+offset_bottom = 37.6667
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
