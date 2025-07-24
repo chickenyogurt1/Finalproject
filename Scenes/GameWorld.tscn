@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dmjipc7xdbxnm" path="res://NPC/weaponshopnpcman.tscn" id="5_llaiv"]
 [ext_resource type="PackedScene" uid="uid://psyr585sktee" path="res://Scenes/player.tscn" id="5_rpegc"]
 [ext_resource type="PackedScene" uid="uid://bcghvhno0hxnu" path="res://NPC/hiringshopNPCman.tscn" id="5_xtikl"]
-[ext_resource type="PackedScene" uid="uid://bkyrhq5wdamye" path="res://NPC/bossman.tscn" id="8_k07wl"]
+[ext_resource type="PackedScene" path="res://NPC/bossman.tscn" id="8_k07wl"]
 [ext_resource type="PackedScene" uid="uid://dhds0k4foukej" path="res://Scenes/items_given.tscn" id="9_kycso"]
-[ext_resource type="PackedScene" uid="uid://cppvvnkblrshu" path="res://NPC/joseph.tscn" id="9_w0qho"]
+[ext_resource type="PackedScene" path="res://NPC/joseph.tscn" id="9_w0qho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0qho"]
-size = Vector2(1037.5, 70)
+size = Vector2(1037.5, 129)
 
 [node name="GameWorld" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [-9.0]
@@ -47,7 +47,7 @@ scale = Vector2(0.6, 0.6)
 [node name="BorderCollision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderCollision"]
-position = Vector2(853.25, 878)
+position = Vector2(856, 903)
 shape = SubResource("RectangleShape2D_w0qho")
 
 [node name="joseph" parent="." instance=ExtResource("9_w0qho")]

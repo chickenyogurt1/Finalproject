@@ -88,7 +88,11 @@ func _process(delta: float) -> void:
 			if (Input.is_key_pressed(KEY_E)):
 				fence_progress_bar.value += delta
 				if (fence_progress_bar.value >= FENCE_CLIMBING_TIME):
-					body.position.y += 100
+					fence_progress_bar.value = 0
+					if body.global_position.y > $"../BorderCollision/CollisionShape2D".global_position.y:
+						body.position.y -= 100
+					else:
+						body.position.y += 100
 	if not near_border and fence_ui.visible:
 		fence_ui.visible = false
 	regen_cooldown += delta
@@ -101,7 +105,7 @@ func _process(delta: float) -> void:
 	var playerInput = get_input()
 	
 	# Player texture changes
-	if (animated_sprite.flip_h == true and playerInput.x >= 0):
+	if (animated_sprite.flip_h == true and playerInput.x > 0):
 		animated_sprite.flip_h = false
 	elif (animated_sprite.flip_h == false and playerInput.x < 0):
 		animated_sprite.flip_h = true
