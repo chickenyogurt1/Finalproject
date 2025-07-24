@@ -47,7 +47,7 @@ func confirm_trade() -> int:
 	offered_item = null
 	return value
 
-func add_knife():
+func _add_knife():
 	emit_signal("get_knife")
 	
 func _open_hiring_UI():
