@@ -5,7 +5,14 @@ extends Node2D
 
 const SPEED = 300.0
 const ACCEL = 2.0
-const INITIAL_HEALTH = 20
+const INITIAL_HEALTH = 50.0
+const COOLDOWN := 1
+const REGEN_COOLDOWN := 5
+
+var attack_range = 100
+var strength = 5
+var hit_cooldown
+var regen_cooldown
 
 var input: Vector2
 var health: float
@@ -13,6 +20,17 @@ var arrested := false
 @onready var body: CharacterBody2D = $JoseCharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $JoseCharacterBody2D/AnimatedSprite2D
 @onready var arrested_panel: Control = $JoseCharacterBody2D/Arrested
+@onready var progress_bar: ProgressBar = $JoseCharacterBody2D/Control/ProgressBar
+
+func do_damage(receiver):
+	if (receiver.global_position.distance_to(body.global_position) > attack_range):
+		return
+	if (hit_cooldown < COOLDOWN):
+		return
+	
+	hit_cooldown = 0
+	animated_sprite.play("attack")
+	receiver.take_damage(strength)
 
 func get_arrested():
 	arrested_panel.visible = true
@@ -26,17 +44,23 @@ func die() -> void:
 
 func take_damage(amount: int, arrest: bool) -> void:
 	health -= amount
-	print("Main character health: " + str(health))
+	progress_bar.value = health / INITIAL_HEALTH * 100
 	if (health <= 0):
 		await get_arrested() if arrest else die()
 
 func _on_animation_finished():
 	if animated_sprite.animation == "dead":
 		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+	elif animated_sprite.animation == "attack":
+		animated_sprite.play("idle")
 
 func _ready() -> void:
+	regen_cooldown = 0
+	hit_cooldown = COOLDOWN
 	health = INITIAL_HEALTH
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
+	add_to_group("smugglers")
+	add_to_group("jose")
 	
 	print("Main character health: " + str(health))
 
@@ -45,7 +69,17 @@ func get_input():
 	input.y= Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	return input.normalized()
 
-func _process(_delta: float) -> void:	
+func _process(delta: float) -> void:
+	if (animated_sprite.animation == "dead"):
+		return
+	
+	regen_cooldown += delta
+	if (regen_cooldown > REGEN_COOLDOWN):
+		regen_cooldown = 0
+		health += 5
+	
+	hit_cooldown += delta
+	
 	var playerInput = get_input()
 	
 	# Player texture changes

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://4c4i76654je7"]
 
-[ext_resource type="Script" uid="uid://b1sb4cj7gqcmv" path="res://UI/hiringline.gd" id="1_420j8"]
-[ext_resource type="Texture2D" uid="uid://cwst1l7xbdd6q" path="res://Assets/bosscartelwtv/buzzcut/Idle.png" id="1_v7y4h"]
-[ext_resource type="FontFile" uid="uid://cc64ejuk0pal7" path="res://Assets/font/Tiny5-Regular.ttf" id="2_420j8"]
+[ext_resource type="Script" path="res://UI/hiringline.gd" id="1_420j8"]
+[ext_resource type="Texture2D" uid="uid://bqn2r3ygfs4lw" path="res://Assets/bosscartelwtv/buzzcut/Idle.png" id="1_v7y4h"]
+[ext_resource type="FontFile" uid="uid://bity8h0amft6u" path="res://Assets/font/Tiny5-Regular.ttf" id="2_420j8"]
 
 [node name="hiringline" type="Control"]
 custom_minimum_size = Vector2(0, 140)

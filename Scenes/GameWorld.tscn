@@ -19,11 +19,6 @@ position = Vector2(331, 127)
 position = Vector2(300, 430)
 scale = Vector2(0.6, 0.6)
 
-[node name="Jose" parent="." instance=ExtResource("5_rpegc")]
-position = Vector2(581, 273)
-scale = Vector2(0.6, 0.6)
-inv = ExtResource("4_k07wl")
-
 [node name="Police" parent="." instance=ExtResource("4_ywpc4")]
 position = Vector2(258, 538)
 scale = Vector2(0.4, 0.4)
@@ -36,3 +31,8 @@ scale = Vector2(0.6, 0.6)
 position = Vector2(910, 137)
 scale = Vector2(0.6, 0.6)
 item = ExtResource("7_xtikl")
+
+[node name="Jose" parent="." instance=ExtResource("5_rpegc")]
+position = Vector2(581, 273)
+scale = Vector2(0.6, 0.6)
+inv = ExtResource("4_k07wl")

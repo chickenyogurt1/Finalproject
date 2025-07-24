@@ -1,9 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://psyr585sktee"]
+[gd_scene load_steps=34 format=3 uid="uid://psyr585sktee"]
 
 [ext_resource type="Script" uid="uid://w5ajbmu4x843" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bxjn0ha4misef" path="res://currcharsheet.png" id="2_sx8lc"]
-[ext_resource type="FontFile" uid="uid://dragx2ephlsf8" path="res://Assets/font/Tiny5-Regular.ttf" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://cka1nismy61ox" path="res://currcharsheet.png" id="2_sx8lc"]
+[ext_resource type="FontFile" uid="uid://bity8h0amft6u" path="res://Assets/font/Tiny5-Regular.ttf" id="3_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://c2ixm6kfvy0aa" path="res://Inventory/inv_ui.tscn" id="4_vgqql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1odr"]
+atlas = ExtResource("2_sx8lc")
+region = Rect2(480, 400, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("2_sx8lc")
@@ -97,6 +101,14 @@ region = Rect2(720, 160, 80, 80)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_p1odr")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6t5aa")
 }, {
 "duration": 1.0,
@@ -180,6 +192,29 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gysh"]
 size = Vector2(23, 59)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3wgy"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(1, 1, 1, 0.298039)
+shadow_size = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgqql"]
+bg_color = Color(0, 0, 0, 0.501961)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkybt"]
+bg_color = Color(0, 0.721522, 0.30356, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t5aa"]
 bg_color = Color(0, 0, 0, 0.501961)
 
@@ -194,7 +229,7 @@ texture_filter = 1
 position = Vector2(0, -33)
 scale = Vector2(0.825, 0.825)
 sprite_frames = SubResource("SpriteFrames_p1odr")
-animation = &"dead"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JoseCharacterBody2D"]
@@ -202,7 +237,56 @@ position = Vector2(-1.5, -29.5)
 shape = SubResource("RectangleShape2D_0gysh")
 
 [node name="Camera2D" type="Camera2D" parent="JoseCharacterBody2D"]
-zoom = Vector2(2, 2)
+
+[node name="Inv_UI" parent="JoseCharacterBody2D" instance=ExtResource("4_vgqql")]
+offset_left = -42.0
+offset_top = -127.0
+offset_right = 42.0
+offset_bottom = -63.0
+
+[node name="Control" type="Control" parent="JoseCharacterBody2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="JoseCharacterBody2D/Control"]
+layout_mode = 0
+offset_left = -922.0
+offset_top = -484.0
+offset_right = -667.0
+offset_bottom = -414.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x3wgy")
+
+[node name="ProgressBar" type="ProgressBar" parent="JoseCharacterBody2D/Control"]
+offset_left = -898.0
+offset_top = -465.0
+offset_right = -690.0
+offset_bottom = -434.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vgqql")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fkybt")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="JoseCharacterBody2D/Control/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -11.5
+offset_right = 57.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "HP"
+horizontal_alignment = 1
 
 [node name="Arrested" type="Control" parent="JoseCharacterBody2D"]
 visible = false
@@ -235,9 +319,3 @@ text = "You were arrested..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-
-[node name="Inv_UI" parent="JoseCharacterBody2D" instance=ExtResource("4_vgqql")]
-offset_left = -42.0
-offset_top = -127.0
-offset_right = 42.0
-offset_bottom = -63.0
