@@ -5,7 +5,6 @@ extends Node2D
 
 const SPEED = 200.0
 const ACCEL = 2.0
-const INITIAL_HEALTH = 50.0
 const COOLDOWN := 1
 const REGEN_COOLDOWN := 5
 const FENCE_CLIMBING_TIME := 7
@@ -16,13 +15,11 @@ var hit_cooldown
 var regen_cooldown
 
 var input: Vector2
-var health: float
 var arrested := false
 @onready var border_collision: Area2D = $"../BorderCollision"
 @onready var body: CharacterBody2D = $JoseCharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $JoseCharacterBody2D/AnimatedSprite2D
 @onready var arrested_panel: Control = $JoseCharacterBody2D/Arrested
-@onready var progress_bar: ProgressBar = $JoseCharacterBody2D/HP/ProgressBar
 @onready var fence_ui: Control = $JoseCharacterBody2D/Fence_Climbing
 @onready var fence_progress_bar: ProgressBar = $JoseCharacterBody2D/Fence_Climbing/ProgressBar
 
@@ -47,9 +44,14 @@ func die() -> void:
 	animated_sprite.play("dead")
 
 func take_damage(amount: int, arrest: bool) -> void:
-	update_health(health - amount)
-	if (health <= 0):
+	update_health(Global.player_health - amount)
+	if (Global.player_health <= 0):
 		await get_arrested() if arrest else die()
+
+func update_health(value: float):
+	Global.player_health = value
+	Global.progress_bar.value = Global.player_health / Global.INITIAL_HEALTH * 100
+
 
 func _on_animation_finished():
 	if animated_sprite.animation == "dead":
@@ -61,21 +63,15 @@ func _ready() -> void:
 	fence_progress_bar.max_value = FENCE_CLIMBING_TIME
 	regen_cooldown = 0
 	hit_cooldown = COOLDOWN
-	health = INITIAL_HEALTH
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	add_to_group("smugglers")
 	add_to_group("jose")
-	
-	print("Main character health: " + str(health))
 
 func get_input():
 	input.x= Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	input.y= Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	return input.normalized()
-	
-func update_health(value: float):
-	health = value
-	progress_bar.value = health / INITIAL_HEALTH * 100
+
 
 func _process(delta: float) -> void:
 	if (animated_sprite.animation == "dead"):
@@ -94,11 +90,10 @@ func _process(delta: float) -> void:
 					body.position.y += 100
 	if not near_border and fence_ui.visible:
 		fence_ui.visible = false
-	
 	regen_cooldown += delta
 	if (regen_cooldown > REGEN_COOLDOWN):
 		regen_cooldown = 0
-		update_health(health + 5)
+		update_health(Global.player_health + 5)
 	
 	hit_cooldown += delta
 	

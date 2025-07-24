@@ -1,6 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://1mf077dwxb2x"]
+[gd_scene load_steps=7 format=3 uid="uid://1mf077dwxb2x"]
 
 [ext_resource type="Script" uid="uid://gtxa2vv0gxhj" path="res://Scripts/main.gd" id="1_bt2oj"]
+[ext_resource type="Script" uid="uid://0g2beem4osag" path="res://money.gd" id="2_idj7w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kln2b"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(1, 1, 1, 0.298039)
+shadow_size = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgh2o"]
+bg_color = Color(0, 0, 0, 0.501961)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbw6q"]
+bg_color = Color(1, 0.2, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1gob"]
+bg_color = Color(1, 0.8, 0.101961, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Main" type="Node"]
 script = ExtResource("1_bt2oj")
@@ -12,3 +43,80 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="HP" type="Control" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 423.0
+offset_top = 272.0
+offset_right = 630.0
+offset_bottom = 343.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UI/HP"]
+layout_mode = 0
+offset_left = -415.0
+offset_top = -221.0
+offset_right = -160.0
+offset_bottom = -151.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kln2b")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/UI/HP"]
+layout_mode = 0
+offset_left = -391.0
+offset_top = -222.0
+offset_right = -183.0
+offset_bottom = -191.0
+theme_override_styles/background = SubResource("StyleBoxFlat_rgh2o")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pbw6q")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/HP/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -11.5
+offset_right = 57.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0823529, 0.243137, 0.12549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "Health"
+horizontal_alignment = 1
+
+[node name="money" type="Control" parent="CanvasLayer/UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 71.0
+offset_top = 86.0
+offset_right = 280.0
+offset_bottom = 119.0
+script = ExtResource("2_idj7w")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UI/money"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 209.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1gob")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/money"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 82.0
+offset_top = -2.0
+offset_right = 110.0
+offset_bottom = 21.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0.083782, 0.243296, 0.127107, 1)
+text = "123"

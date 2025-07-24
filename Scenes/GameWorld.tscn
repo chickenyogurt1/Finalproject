@@ -17,7 +17,7 @@ size = Vector2(1037.5, 70)
 metadata/_edit_horizontal_guides_ = [-9.0]
 
 [node name="map" parent="." instance=ExtResource("1_xtikl")]
-position = Vector2(331, 127)
+position = Vector2(330, 125)
 
 [node name="Weaponshopnpcman" parent="." instance=ExtResource("5_llaiv")]
 position = Vector2(693, -197)
@@ -52,3 +52,4 @@ shape = SubResource("RectangleShape2D_w0qho")
 
 [node name="joseph" parent="." instance=ExtResource("9_w0qho")]
 position = Vector2(923, 1533)
+scale = Vector2(0.6, 0.6)

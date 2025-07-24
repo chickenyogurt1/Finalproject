@@ -1,5 +1,9 @@
 # Global.gd
 extends Node
+
+const INITIAL_HEALTH = 50.0
+var progress_bar
+
 var goods = {
 	"medicine": {"weight": 2, "value": 150, "risk": 0.9},
 	"food": {"weight": 1, "value": 50, "risk": 0.3},
@@ -12,9 +16,12 @@ var crew = {
 }
 
 var player_money: int = 900
+var player_health: float
 var selected_goods = []
 var hired_crew = []
 
+func _ready() -> void:
+	player_health = INITIAL_HEALTH
 
 func _add_pistol():
 	print("addedpistol")

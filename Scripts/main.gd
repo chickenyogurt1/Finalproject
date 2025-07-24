@@ -5,7 +5,9 @@ var game_world_scene = preload("res://Scenes/GameWorld.tscn")
 var current_scene = null
 
 func _ready():
+	Global.progress_bar = $CanvasLayer/UI/HP/ProgressBar
 	show_main_menu()
+	$CanvasLayer/UI.visible = false
 
 func show_main_menu():
 	if current_scene:
@@ -21,3 +23,4 @@ func _on_start_game():
 		current_scene.queue_free()
 	current_scene = game_world_scene.instantiate()
 	add_child(current_scene)
+	$CanvasLayer/UI.visible = true
