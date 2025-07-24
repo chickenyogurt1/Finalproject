@@ -1,11 +1,27 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhds0k4foukej"]
 
 [ext_resource type="Script" uid="uid://bafngx5utax51" path="res://Scripts/items_given.gd" id="1_3eyvc"]
-[ext_resource type="Texture2D" uid="uid://i1kkc6bebcho" path="res://Assets/image-removebg-preview (1).png" id="2_peg5v"]
+[ext_resource type="Texture2D" uid="uid://d2rgi1sg16508" path="res://Assets/image__1_-removebg-preview (1).png" id="2_peg5v"]
 
 [node name="ItemsGiven" type="Node2D"]
 script = ExtResource("1_3eyvc")
 
-[node name="pallet" type="Sprite2D" parent="."]
-position = Vector2(593, 359)
+[node name="img" type="Sprite2D" parent="."]
+position = Vector2(3.75, 0.75)
+scale = Vector2(2, 2)
 texture = ExtResource("2_peg5v")
+
+[node name="Pallet" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)

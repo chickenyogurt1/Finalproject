@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://4qrggjcmdlft"]
+[gd_scene load_steps=6 format=3 uid="uid://c8jgnodjihsco"]
 
-[ext_resource type="Script" uid="uid://cm8pkj4bmh2uy" path="res://Inventory/Items/apple_item.gd" id="1_gpaq1"]
-[ext_resource type="Texture2D" uid="uid://dyqds837trf7c" path="res://Assets/foods/fruit_apple.png" id="2_2d1wn"]
-[ext_resource type="Resource" uid="uid://bqjy3e8o8475u" path="res://Inventory/Items/apple.tres" id="2_gmamu"]
+[ext_resource type="Script" uid="uid://dd2pubq3s001e" path="res://Inventory/Items/orange_item.gd" id="1_7tefj"]
+[ext_resource type="Resource" uid="uid://evyojpk80kt8" path="res://Inventory/Items/orange.tres" id="2_ailxr"]
+[ext_resource type="Texture2D" uid="uid://e84ir25xfbx1" path="res://Assets/foods/fruit_orange.png" id="3_r6xa2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ge2x2"]
 size = Vector2(50, 50)
@@ -10,9 +10,9 @@ size = Vector2(50, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0n32"]
 size = Vector2(113, 80.25)
 
-[node name="AppleItem" type="Node2D"]
-script = ExtResource("1_gpaq1")
-item = ExtResource("2_gmamu")
+[node name="orange_item" type="Node2D"]
+script = ExtResource("1_7tefj")
+item = ExtResource("2_ailxr")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(0, -64)
@@ -20,7 +20,7 @@ position = Vector2(0, -64)
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(0, 39)
 scale = Vector2(3, 3)
-texture = ExtResource("2_2d1wn")
+texture = ExtResource("3_r6xa2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, 39)
