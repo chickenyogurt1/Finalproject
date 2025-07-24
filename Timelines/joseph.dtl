@@ -1,9 +1,8 @@
-Joseph: That you? You got the goods?
-- Who are you again?
-	Joseph: Someone who doesn’t ask questions. You should try it.
-	Joseph: Drop it behind the crates. You’ll get paid by nightfall.
-- Had some heat on me.
-	Joseph: Heat’s your problem. As long as it’s here, we’re good.
-	Joseph: Drop it behind the crates. You’ll get paid by nightfall.
-- Yeah. All here.
-	Joseph: Good. Drop it behind the crates. You’ll get paid by nightfall.
+Joseph: You got the goods?
+- Yea. What you want?
+	Joseph: I’ll take that {offered_item_name} off your hands.
+	- no
+		Joseph: Fine. Don’t waste my time then.
+		[end_timeline]
+	- bet
+		do Global.confirm_trade()

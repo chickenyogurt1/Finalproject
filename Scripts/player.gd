@@ -60,6 +60,7 @@ func _on_animation_finished():
 		animated_sprite.play("idle")
 
 func _ready() -> void:
+	Global.player_inventory = self.inv
 	fence_progress_bar.max_value = FENCE_CLIMBING_TIME
 	regen_cooldown = 0
 	hit_cooldown = COOLDOWN
