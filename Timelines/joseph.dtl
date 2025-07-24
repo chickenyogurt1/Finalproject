@@ -1,0 +1,8 @@
+Joseph: You got the goods?
+- Yea. What you want?
+	Joseph: I’ll take that {offered_item_name} off your hands.
+	- no
+		Joseph: Fine. Don’t waste my time then.
+		[end_timeline]
+	- bet
+		do Global.confirm_trade()

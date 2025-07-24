@@ -1,0 +1,11 @@
+Boss: You're up. Ready for a run?
+- Not right now.
+	[end_timeline]
+- Where’s the pickup?
+	Boss: Same place as always, stashed near the border fence. Watch for patrols.
+	Boss: Get it past the line and don't mess around
+	[end_timeline]
+- Yeah. What’s the cargo?
+	Boss: Light load, usual risk.
+	Boss: Get it past the line and don't mess around
+	[end_timeline]

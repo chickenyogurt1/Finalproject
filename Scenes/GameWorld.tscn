@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbmt0u7drjtdl"]
+[gd_scene load_steps=11 format=3 uid="uid://bbmt0u7drjtdl"]
 
 [ext_resource type="PackedScene" uid="uid://djx26crt3hjf2" path="res://Scenes/map.tscn" id="1_xtikl"]
 [ext_resource type="Resource" uid="uid://yna5yg16114x" path="res://Inventory/playerInv.tres" id="4_k07wl"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dmjipc7xdbxnm" path="res://NPC/weaponshopnpcman.tscn" id="5_llaiv"]
 [ext_resource type="PackedScene" uid="uid://psyr585sktee" path="res://Scenes/player.tscn" id="5_rpegc"]
 [ext_resource type="PackedScene" uid="uid://bcghvhno0hxnu" path="res://NPC/hiringshopNPCman.tscn" id="5_xtikl"]
+[ext_resource type="PackedScene" uid="uid://bkyrhq5wdamye" path="res://NPC/bossman.tscn" id="8_k07wl"]
 [ext_resource type="PackedScene" uid="uid://dhds0k4foukej" path="res://Scenes/items_given.tscn" id="9_kycso"]
+[ext_resource type="PackedScene" uid="uid://cppvvnkblrshu" path="res://NPC/joseph.tscn" id="9_w0qho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0qho"]
 size = Vector2(1037.5, 129)
@@ -15,7 +17,7 @@ size = Vector2(1037.5, 129)
 metadata/_edit_horizontal_guides_ = [-9.0]
 
 [node name="map" parent="." instance=ExtResource("1_xtikl")]
-position = Vector2(331, 127)
+position = Vector2(330, 125)
 
 [node name="Weaponshopnpcman" parent="." instance=ExtResource("5_llaiv")]
 position = Vector2(693, -197)
@@ -38,8 +40,16 @@ scale = Vector2(0.4, 0.4)
 position = Vector2(-111, 243)
 scale = Vector2(0.6, 0.6)
 
+[node name="bossman" parent="." instance=ExtResource("8_k07wl")]
+position = Vector2(492, 323)
+scale = Vector2(0.6, 0.6)
+
 [node name="BorderCollision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderCollision"]
 position = Vector2(856, 903)
 shape = SubResource("RectangleShape2D_w0qho")
+
+[node name="joseph" parent="." instance=ExtResource("9_w0qho")]
+position = Vector2(665, 1949)
+scale = Vector2(0.6, 0.6)
