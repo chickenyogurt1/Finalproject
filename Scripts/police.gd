@@ -117,6 +117,7 @@ func die():
 func _on_animation_finished():
 	if animated_sprite.animation.contains("shoot"):
 		bullets_left -= 1
+		print("Shooting smuggler")
 		await get_nearest_smuggler().take_damage(3, true)
 		animated_sprite.play(get_animation("idle"))
 	elif animated_sprite.animation.contains("recharge"):
