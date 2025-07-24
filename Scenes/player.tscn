@@ -1,11 +1,10 @@
-[gd_scene load_steps=44 format=3 uid="uid://psyr585sktee"]
+[gd_scene load_steps=39 format=3 uid="uid://psyr585sktee"]
 
 [ext_resource type="Script" uid="uid://w5ajbmu4x843" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cka1nismy61ox" path="res://currcharsheet.png" id="2_sx8lc"]
 [ext_resource type="Texture2D" uid="uid://cp162fied6nnq" path="res://Assets/fightframes.png" id="2_x3wgy"]
 [ext_resource type="FontFile" uid="uid://bity8h0amft6u" path="res://Assets/font/Tiny5-Regular.ttf" id="3_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://c2ixm6kfvy0aa" path="res://Inventory/inv_ui.tscn" id="4_vgqql"]
-[ext_resource type="Script" path="res://Scenes/money.gd" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1odr"]
 atlas = ExtResource("2_x3wgy")
@@ -229,29 +228,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gysh"]
 size = Vector2(23, 59)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3wgy"]
-bg_color = Color(0, 0, 0, 0)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color(1, 1, 1, 0.298039)
-shadow_size = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgqql"]
-bg_color = Color(0, 0, 0, 0.501961)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkybt"]
-bg_color = Color(0, 0.422551, 0.16551, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3smsa"]
 bg_color = Color(0.856067, 0.856067, 0.856067, 1)
 corner_radius_top_left = 4
@@ -268,13 +244,6 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t5aa"]
 bg_color = Color(0, 0, 0, 0.501961)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1ek2"]
-bg_color = Color(0, 0.423529, 0.164706, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [node name="Jose" type="Node2D"]
 script = ExtResource("1_cvnsp")
@@ -304,54 +273,6 @@ offset_left = -42.0
 offset_top = -127.0
 offset_right = 42.0
 offset_bottom = -63.0
-
-[node name="HP" type="Control" parent="JoseCharacterBody2D"]
-layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-
-[node name="Panel" type="Panel" parent="JoseCharacterBody2D/HP"]
-layout_mode = 0
-offset_left = -415.0
-offset_top = -221.0
-offset_right = -160.0
-offset_bottom = -151.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_x3wgy")
-
-[node name="ProgressBar" type="ProgressBar" parent="JoseCharacterBody2D/HP"]
-layout_mode = 0
-offset_left = -391.0
-offset_top = -222.0
-offset_right = -183.0
-offset_bottom = -191.0
-theme_override_styles/background = SubResource("StyleBoxFlat_vgqql")
-theme_override_styles/fill = SubResource("StyleBoxFlat_fkybt")
-value = 100.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="JoseCharacterBody2D/HP/ProgressBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -57.0
-offset_top = -11.5
-offset_right = 57.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.0823529, 0.243137, 0.12549, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 23
-text = "HP"
-horizontal_alignment = 1
 
 [node name="Fence_Climbing" type="Control" parent="JoseCharacterBody2D"]
 layout_mode = 3
@@ -422,30 +343,3 @@ text = "You were arrested..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-
-[node name="money" type="Control" parent="JoseCharacterBody2D"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -432.0
-offset_top = -184.0
-offset_right = -223.0
-offset_bottom = -151.0
-script = ExtResource("5_fkybt")
-
-[node name="Panel" type="Panel" parent="JoseCharacterBody2D/money"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 209.0
-offset_bottom = 33.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_f1ek2")
-
-[node name="Label" type="Label" parent="JoseCharacterBody2D/money"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 82.0
-offset_top = -2.0
-offset_right = 110.0
-offset_bottom = 21.0
-scale = Vector2(1.5, 1.5)
-theme_override_colors/font_color = Color(0.083782, 0.243296, 0.127107, 1)
-text = "123"

@@ -23,12 +23,16 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Boss": "res://NPC/Boss.dch",
+"Joseph": "res://NPC/Joseph.dch",
 "WeaponShop": "res://NPC/WeaponShop.dch",
 "hiringshop": "res://NPC/hiringshop.dch"
 }
 directories/dtl_directory={
+"Boss": "res://Timelines/Boss.dtl",
 "WeaponShopNPC_Timeline": "res://Timelines/WeaponShopNPC_Timeline.dtl",
 "hiringmanager": "res://Timelines/hiringmanager.dtl",
+"joseph": "res://Timelines/joseph.dtl",
 "weaponshop": "res://Timelines/weaponshop.dtl"
 }
 layout/style_list=[]
