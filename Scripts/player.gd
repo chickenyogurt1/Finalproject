@@ -1,6 +1,8 @@
 class_name Jose
 extends Node2D
 
+@export var inv: Inv
+
 const SPEED = 300.0
 const ACCEL = 2.0
 const INITIAL_HEALTH = 20
@@ -59,3 +61,7 @@ func _process(_delta: float) -> void:
 	# Movements
 	body.velocity = playerInput * SPEED
 	body.move_and_slide()
+
+
+func collect(item):
+	inv.insert(item)

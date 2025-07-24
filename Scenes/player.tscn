@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://psyr585sktee"]
+[gd_scene load_steps=30 format=3 uid="uid://psyr585sktee"]
 
 [ext_resource type="Script" uid="uid://w5ajbmu4x843" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://cka1nismy61ox" path="res://currcharsheet.png" id="2_sx8lc"]
-[ext_resource type="FontFile" uid="uid://bity8h0amft6u" path="res://Assets/font/Tiny5-Regular.ttf" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://bxjn0ha4misef" path="res://currcharsheet.png" id="2_sx8lc"]
+[ext_resource type="FontFile" uid="uid://dragx2ephlsf8" path="res://Assets/font/Tiny5-Regular.ttf" id="3_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://c2ixm6kfvy0aa" path="res://Inventory/inv_ui.tscn" id="4_vgqql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("2_sx8lc")
@@ -201,6 +202,7 @@ position = Vector2(-1.5, -29.5)
 shape = SubResource("RectangleShape2D_0gysh")
 
 [node name="Camera2D" type="Camera2D" parent="JoseCharacterBody2D"]
+zoom = Vector2(2, 2)
 
 [node name="Arrested" type="Control" parent="JoseCharacterBody2D"]
 visible = false
@@ -233,3 +235,9 @@ text = "You were arrested..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Inv_UI" parent="JoseCharacterBody2D" instance=ExtResource("4_vgqql")]
+offset_left = -42.0
+offset_top = -127.0
+offset_right = 42.0
+offset_bottom = -63.0

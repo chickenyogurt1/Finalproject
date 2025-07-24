@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://4qrggjcmdlft"]
 
 [ext_resource type="Script" uid="uid://cm8pkj4bmh2uy" path="res://Inventory/Items/apple_item.gd" id="1_gpaq1"]
-[ext_resource type="Texture2D" uid="uid://blhlwuvnlt677" path="res://Assets/foods/vegetable_bellpepper_red.png" id="3_gmamu"]
+[ext_resource type="Texture2D" uid="uid://dyqds837trf7c" path="res://Assets/foods/fruit_apple.png" id="2_2d1wn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ge2x2"]
-size = Vector2(47, 51)
+size = Vector2(50, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0n32"]
 size = Vector2(113, 80.25)
@@ -19,10 +19,10 @@ position = Vector2(0, -64)
 texture_filter = 1
 position = Vector2(0, 39)
 scale = Vector2(3, 3)
-texture = ExtResource("3_gmamu")
+texture = ExtResource("2_2d1wn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.5, 38.5)
+position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_ge2x2")
 
 [node name="Label" type="Label" parent="."]
