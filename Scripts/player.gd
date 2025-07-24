@@ -3,7 +3,7 @@ extends Node2D
 
 @export var inv: Inv
 
-const SPEED = 300.0
+const SPEED = 200.0
 const ACCEL = 2.0
 const INITIAL_HEALTH = 50.0
 const COOLDOWN := 1
