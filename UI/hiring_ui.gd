@@ -46,6 +46,7 @@ func _on_hire_pressed(data: Dictionary, line: Node):
 		print("You hired %s for $%d (STR: %d)" % [data.name, data.price, data.strength])
 		var bodyguard = bodyguard_scenes[data.name].instantiate()
 		get_tree().root.add_child(bodyguard)
+		Global.player_money -= data.price
 		line.queue_free()
 	else:
 		print("You can't afford %s. You have $%d" % [data.name, Global.player_money])

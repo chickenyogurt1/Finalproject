@@ -48,6 +48,7 @@ func confirm_trade() -> int:
 	return value
 
 func _add_knife():
+	player_money -= 100
 	emit_signal("get_knife")
 	
 func _open_hiring_UI():
