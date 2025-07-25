@@ -476,7 +476,7 @@ scale = Vector2(0.825, 0.825)
 sprite_frames = SubResource("SpriteFrames_p1odr")
 animation = &"walk_knife"
 autoplay = "idle"
-frame_progress = 0.764992
+frame_progress = 0.312949
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JoseCharacterBody2D"]
 position = Vector2(-1.5, -29.5)

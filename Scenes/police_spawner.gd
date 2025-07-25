@@ -1,6 +1,6 @@
 extends Node
 
-const SPAWN_COOLDOWN = 5
+const SPAWN_COOLDOWN = 20
 
 var police = preload("res://Scenes/Police.tscn")
 var last_spawn = 0

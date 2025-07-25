@@ -59,8 +59,8 @@ func _physics_process(delta: float) -> void:
 		#if (global_position.distance_to(jose.body.global_position) > 100):
 			#global_position = global_position.move_toward(jose.body.global_position, SPEED * delta)
 		#return
-	var police_pos = jose.body.global_position if police == null else police.global_position
 	var pos = global_position
+	var police_pos = jose.body.global_position if (not police_found) or police == null or pos.distance_to(jose.body.global_position) > 500 else police.global_position
 	#print(main_player_found)
 	if police_found == true:
 		if animated_sprite.flip_h == true and police_pos.x >= pos.x:

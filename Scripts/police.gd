@@ -13,12 +13,15 @@ var health: float = MAX_HEALTH
 var type: int
 @onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 @onready var progress_bar: ProgressBar = $CharacterBody2D/ProgressBar
-@onready var jose: Jose = $"../Jose"
+@onready var jose: Jose
 
 var smuggler_found: bool = false
 var last_shot: float = 0
 var bullets_left = BULLETS
 var regen_cooldown
+
+func clicked():
+	jose.do_damage(self)
 
 func get_animation(name: String) -> String:
 	return name + str(type)
@@ -30,6 +33,8 @@ func _ready() -> void:
 	type = random.randi_range(1, 3)
 	animated_sprite.play(get_animation("idle"))
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
+	jose = get_tree().get_nodes_in_group("jose")[0]
+	$Area2D.connect("police_clicked", Callable(self, "clicked"))
 	add_to_group("police")
 
 func get_nearest_smuggler():
