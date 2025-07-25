@@ -65,6 +65,8 @@ func take_damage(amount: int, arrest: bool) -> void:
 		await get_arrested() if arrest else die()
 
 func update_health(value: float):
+	if value > Global.INITIAL_HEALTH:
+		value = Global.INITIAL_HEALTH
 	Global.player_health = value
 	Global.progress_bar.value = Global.player_health / Global.INITIAL_HEALTH * 100
 

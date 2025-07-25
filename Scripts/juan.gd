@@ -45,6 +45,8 @@ func get_nearest_police():
 	return nearest_police
 
 func update_health(value: float):
+	if value > INITIAL_HEALTH:
+		value = INITIAL_HEALTH
 	health = value
 	progress_bar.value = health / INITIAL_HEALTH * 100
 

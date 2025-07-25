@@ -52,6 +52,8 @@ func get_nearest_smuggler():
 	return nearest_smuggler
 
 func update_health(value: float):
+	if value > MAX_HEALTH:
+		value = MAX_HEALTH
 	health = value
 	progress_bar.value = health / MAX_HEALTH * 100
 
