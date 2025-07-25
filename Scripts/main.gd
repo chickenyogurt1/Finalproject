@@ -8,6 +8,9 @@ func _ready():
 	Global.progress_bar = $CanvasLayer/UI/HP/ProgressBar
 	show_main_menu()
 	$CanvasLayer/UI.visible = false
+	if Global.trigger_start_game:
+		Global.trigger_start_game = false
+		_on_start_game()
 
 func show_main_menu():
 	if current_scene:

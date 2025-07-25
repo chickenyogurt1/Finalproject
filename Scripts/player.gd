@@ -55,6 +55,7 @@ func get_arrested():
 	arrested = true
 	await get_tree().create_timer(3).timeout
 	get_tree().change_scene_to_file("res://UI/BribeUI.tscn")
+	
 
 func die() -> void:
 	animated_sprite.play(get_animation("dead"))

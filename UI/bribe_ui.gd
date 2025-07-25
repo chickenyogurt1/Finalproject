@@ -72,7 +72,11 @@ func timerOver():
 	var moneyNeeded = Global.player_money * 0.2 + randi_range(-20, 60)
 	if get_total_in_hand($handarea) >= moneyNeeded:
 		$textbox.text = get_random_officer_response(true)
+		await get_tree().create_timer(2).timeout
 		Global.player_money -= get_total_in_hand($handarea)
+		Global.trigger_start_game = true
+		get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+		
 	else:
 		$textbox.text = get_random_officer_response(false)
 		Global.player_money -= get_total_in_hand($handarea)

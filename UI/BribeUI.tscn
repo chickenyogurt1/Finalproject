@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwgefvegpq4fb"]
 
 [ext_resource type="Script" uid="uid://4simlvctignl" path="res://UI/bribe_ui.gd" id="1_aw5or"]
-[ext_resource type="Texture2D" uid="uid://dd4vr6e8gm1rg" path="res://Assets/ChatGPT Image Jul 22, 2025, 09_47_59 AM.png" id="2_gkmm0"]
-[ext_resource type="Texture2D" uid="uid://bu1u0v74exgyw" path="res://Assets/ChatGPT Image Jul 21, 2025, 10_56_06 AM.png" id="2_vabww"]
+[ext_resource type="Texture2D" uid="uid://bwpalvv5otun3" path="res://Assets/ChatGPT Image Jul 22, 2025, 09_47_59 AM.png" id="2_gkmm0"]
+[ext_resource type="Texture2D" uid="uid://bdmeo7e3edts6" path="res://Assets/ChatGPT Image Jul 21, 2025, 10_56_06 AM.png" id="2_vabww"]
 [ext_resource type="PackedScene" uid="uid://ckdh7dk2bpyxc" path="res://Assets/money/dropablearea.tscn" id="4_u26uc"]
-[ext_resource type="FontFile" uid="uid://bity8h0amft6u" path="res://Assets/font/Tiny5-Regular.ttf" id="5_u26uc"]
+[ext_resource type="FontFile" uid="uid://dragx2ephlsf8" path="res://Assets/font/Tiny5-Regular.ttf" id="5_u26uc"]
 
 [node name="BribeUi" type="Control"]
 layout_mode = 3

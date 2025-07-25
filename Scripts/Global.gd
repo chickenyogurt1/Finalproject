@@ -6,6 +6,7 @@ var progress_bar
 signal get_knife
 
 var player_inventory: Inv = null
+var trigger_start_game = false
 
 var goods = {
 	"apple": {"weight": 2, "value": 30, "risk": 0.9},
