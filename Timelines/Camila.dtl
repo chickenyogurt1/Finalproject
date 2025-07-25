@@ -1,0 +1,9 @@
+Camila: You got something for me?
+Camila: Hmm. That {offered_item_name} sounds good. I’ll take it.
+- No.
+	Camila: Then stop wasting my time.
+	[end_timeline]
+- Sure.
+	do Global.confirm_trade()
+	Camila: Come back when you got more.
+	[end_timeline]

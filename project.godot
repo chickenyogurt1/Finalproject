@@ -24,12 +24,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Boss": "res://NPC/Boss.dch",
+"Camila": "res://NPC/Camila.dch",
+"Don": "res://NPC/Don.dch",
 "Joseph": "res://NPC/Joseph.dch",
 "WeaponShop": "res://NPC/WeaponShop.dch",
 "hiringshop": "res://NPC/hiringshop.dch"
 }
 directories/dtl_directory={
 "Boss": "res://Timelines/Boss.dtl",
+"Camila": "res://Timelines/Camila.dtl",
 "WeaponShopNPC_Timeline": "res://Timelines/WeaponShopNPC_Timeline.dtl",
 "hiringmanager": "res://Timelines/hiringmanager.dtl",
 "joseph": "res://Timelines/joseph.dtl",
@@ -37,7 +40,9 @@ directories/dtl_directory={
 }
 layout/style_list=[]
 layout/default_style="Default"
-variables={}
+variables={
+"offered_item_name": ""
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
