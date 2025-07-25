@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=3 uid="uid://cjojqbyro11l6"]
+
+[ext_resource type="Script" uid="uid://whl2a1mcwr8v" path="res://NPC/don.gd" id="1_g0oxi"]
+[ext_resource type="Texture2D" uid="uid://3e6dp4341shs" path="res://Assets/citizens/2/Idle.png" id="2_g0oxi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxwe2"]
+atlas = ExtResource("2_g0oxi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a3go"]
+atlas = ExtResource("2_g0oxi")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk1ue"]
+atlas = ExtResource("2_g0oxi")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc81m"]
+atlas = ExtResource("2_g0oxi")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62jvx"]
+atlas = ExtResource("2_g0oxi")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n0h8"]
+atlas = ExtResource("2_g0oxi")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76hkb"]
+atlas = ExtResource("2_g0oxi")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nuhs2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxwe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a3go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk1ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc81m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62jvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n0h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76hkb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4f26"]
+size = Vector2(36, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8nax"]
+size = Vector2(179, 128.5)
+
+[node name="don" type="Node2D"]
+script = ExtResource("1_g0oxi")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(0, -64)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(-0.499999, 4.5)
+scale = Vector2(0.914063, 0.914063)
+sprite_frames = SubResource("SpriteFrames_nuhs2")
+animation = &"idle"
+frame_progress = 0.816975
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 30.6667)
+shape = SubResource("RectangleShape2D_y4f26")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -31.0
+offset_top = -94.0
+offset_right = 32.0
+offset_bottom = -71.0
+text = "E to talk"
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -66)
+shape = SubResource("RectangleShape2D_b8nax")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

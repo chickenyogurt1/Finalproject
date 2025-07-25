@@ -23,17 +23,23 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Alejandro": "res://NPC/Alejandro.dch",
 "Boss": "res://NPC/Boss.dch",
 "Camila": "res://NPC/Camila.dch",
 "Don": "res://NPC/Don.dch",
+"Elias": "res://NPC/Elias.dch",
 "Joseph": "res://NPC/Joseph.dch",
+"Lupe": "res://NPC/Lupe.dch",
 "WeaponShop": "res://NPC/WeaponShop.dch",
 "hiringshop": "res://NPC/hiringshop.dch"
 }
 directories/dtl_directory={
+"Alejandro": "res://Timelines/Alejandro.dtl",
 "Boss": "res://Timelines/Boss.dtl",
 "Camila": "res://Timelines/Camila.dtl",
-"WeaponShopNPC_Timeline": "res://Timelines/WeaponShopNPC_Timeline.dtl",
+"Don": "res://Timelines/Don.dtl",
+"Elias": "res://Timelines/Elias.dtl",
+"Lupe": "res://Timelines/Lupe.dtl",
 "hiringmanager": "res://Timelines/hiringmanager.dtl",
 "joseph": "res://Timelines/joseph.dtl",
 "weaponshop": "res://Timelines/weaponshop.dtl"
@@ -41,7 +47,8 @@ directories/dtl_directory={
 layout/style_list=[]
 layout/default_style="Default"
 variables={
-"offered_item_name": ""
+"offered_item_name": "",
+"upgrade_price": 0
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

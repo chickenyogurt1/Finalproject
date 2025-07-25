@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbmt0u7drjtdl"]
+[gd_scene load_steps=16 format=3 uid="uid://bbmt0u7drjtdl"]
 
 [ext_resource type="PackedScene" uid="uid://djx26crt3hjf2" path="res://Scenes/map.tscn" id="1_xtikl"]
 [ext_resource type="Resource" uid="uid://yna5yg16114x" path="res://Inventory/playerInv.tres" id="4_k07wl"]
@@ -8,7 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bkyrhq5wdamye" path="res://NPC/bossman.tscn" id="8_k07wl"]
 [ext_resource type="PackedScene" uid="uid://dhds0k4foukej" path="res://Scenes/items_given.tscn" id="9_kycso"]
 [ext_resource type="PackedScene" uid="uid://cppvvnkblrshu" path="res://NPC/joseph.tscn" id="9_w0qho"]
+[ext_resource type="PackedScene" uid="uid://qx5qrw4erbf8" path="res://NPC/lupe.tscn" id="10_4sjua"]
 [ext_resource type="Script" uid="uid://4wrwk462a80r" path="res://Scenes/police_spawner.gd" id="10_w0qho"]
+[ext_resource type="PackedScene" uid="uid://bcyotanswv83x" path="res://NPC/elias.tscn" id="11_4sjua"]
+[ext_resource type="PackedScene" uid="uid://cjojqbyro11l6" path="res://NPC/don.tscn" id="12_hfae5"]
+[ext_resource type="PackedScene" uid="uid://ccrmos4npbn8g" path="res://NPC/camila.tscn" id="13_clku2"]
+[ext_resource type="PackedScene" uid="uid://cp5cedwo6ag5t" path="res://NPC/alejandro.tscn" id="14_oavat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0qho"]
 size = Vector2(1037.5, 129)
@@ -47,8 +52,28 @@ position = Vector2(856, 903)
 shape = SubResource("RectangleShape2D_w0qho")
 
 [node name="joseph" parent="." instance=ExtResource("9_w0qho")]
-position = Vector2(665, 1949)
+position = Vector2(668, 1990)
 scale = Vector2(0.6, 0.6)
 
 [node name="police_spawner" type="Node" parent="."]
 script = ExtResource("10_w0qho")
+
+[node name="lupe" parent="." instance=ExtResource("10_4sjua")]
+position = Vector2(1510, 1328)
+scale = Vector2(0.6, 0.6)
+
+[node name="elias" parent="." instance=ExtResource("11_4sjua")]
+position = Vector2(187, 1333)
+scale = Vector2(0.6, 0.6)
+
+[node name="don" parent="." instance=ExtResource("12_hfae5")]
+position = Vector2(260, 2127)
+scale = Vector2(0.6, 0.6)
+
+[node name="camila" parent="." instance=ExtResource("13_clku2")]
+position = Vector2(1179, 1594)
+scale = Vector2(0.6, 0.6)
+
+[node name="alejandro" parent="." instance=ExtResource("14_oavat")]
+position = Vector2(1256, 413)
+scale = Vector2(0.6, 0.6)

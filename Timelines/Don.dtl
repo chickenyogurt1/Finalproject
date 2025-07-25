@@ -1,0 +1,7 @@
+Don: What treasure have you brought today?
+Don: Ah... {offered_item_name}. Reminds me of old times.
+- Keep it.
+	Don: Hmph. Sentimental fool.
+- Sell it.
+	do Global.confirm_trade()
+	Don: You honor me. Enjoy the bolivars.

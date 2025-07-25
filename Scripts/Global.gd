@@ -8,6 +8,10 @@ signal get_knife
 var player_inventory: Inv = null
 var trigger_start_game = false
 
+var health_upgrade_price := 200
+var player_max_health := 50.0
+var health_upgrade_amount := 10.0
+
 var goods = {
 	"apple": {"weight": 2, "value": 30, "risk": 0.9},
 	"banana": {"weight": 1, "value": 50, "risk": 0.3},
@@ -40,7 +44,6 @@ func offer_random_item() -> String:
 
 func confirm_trade() -> int:
 	if offered_item == null or !goods.has(offered_item.name):
-		print("whaaaaa")
 		return 0
 	var value = goods[offered_item.name]["value"]
 	player_inventory.remove(offered_item)
@@ -58,6 +61,12 @@ func _open_hiring_UI():
 	var ui_layer = get_tree().root.get_node("/root/Main/CanvasLayer/UI")
 	ui_layer.add_child(hire_ui)
 
-
-func _add_pistol():
-	print("addedpistol")
+func upgradeHealth():
+	if player_money >= health_upgrade_price:
+		player_money -= health_upgrade_price
+		player_max_health += health_upgrade_amount
+		player_health = player_max_health  # optionally heal too
+		health_upgrade_price += 100  # increase price for next time
+		print("Upgraded! Max health:", player_max_health, "New price:", health_upgrade_price)
+	else:
+		print("Not enough money!")

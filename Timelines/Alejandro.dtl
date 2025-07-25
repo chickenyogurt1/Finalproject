@@ -1,0 +1,11 @@
+Alejandro: You want to handle more heat? I’ll toughen your system. Not FDA approved.
+Alejandro: It'll cost you {upgrade_price} bolivars. You in?
+if Global.player_money >= {upgrade_price}:
+	- No.
+		Alejandro: Come back when you're ready.
+		[end_timeline]
+	- Yes.
+		do Global.upgradeHealth()
+else:
+	Alejandro: Too poor. Come back with some cash.
+	[end_timeline]

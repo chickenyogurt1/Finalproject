@@ -1,0 +1,8 @@
+Elias: Whoa—quiet. You weren't followed, right?
+- Of course not
+	Elias: Okay okay... that {offered_item_name} looks good.
+	- Nope.
+		Elias: Fine! But be careful with it.
+	- Hand it over.
+		do Global.confirm_trade()
+		Elias: You didn’t see me. I wasn’t here.

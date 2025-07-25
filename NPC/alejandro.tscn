@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://cp5cedwo6ag5t"]
+
+[ext_resource type="Script" uid="uid://bcwm54l0sgh6i" path="res://NPC/alejandro.gd" id="1_ihgf3"]
+[ext_resource type="Texture2D" uid="uid://baofc72c5g8dm" path="res://Assets/citizens/5/Dialogue.png" id="2_uk082"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy46n"]
+atlas = ExtResource("2_uk082")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fq05"]
+atlas = ExtResource("2_uk082")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdv78"]
+atlas = ExtResource("2_uk082")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j35d3"]
+atlas = ExtResource("2_uk082")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nuhs2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy46n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fq05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdv78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j35d3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4f26"]
+size = Vector2(36, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8nax"]
+size = Vector2(179, 128.5)
+
+[node name="alejandro" type="Node2D"]
+script = ExtResource("1_ihgf3")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(0, -64)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(-0.499999, 4.5)
+scale = Vector2(0.914063, 0.914063)
+sprite_frames = SubResource("SpriteFrames_nuhs2")
+animation = &"idle"
+frame_progress = 0.816975
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 30.6667)
+shape = SubResource("RectangleShape2D_y4f26")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -31.0
+offset_top = -94.0
+offset_right = 32.0
+offset_bottom = -71.0
+text = "E to talk"
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -66)
+shape = SubResource("RectangleShape2D_b8nax")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

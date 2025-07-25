@@ -1,0 +1,7 @@
+Lupe: Oh mijo, you brought something?
+Lupe: {offered_item_name}? Bless you. I could use that.
+- No thanks.
+	Lupe: That’s alright. Maybe next time.
+- Give it.
+	do Global.confirm_trade()
+	Lupe: You're doing good work out there.
